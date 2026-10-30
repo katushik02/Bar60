@@ -5,26 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#12201e">
+<meta name="theme-color" content="#F3E6D2">
 <title>Гастробар 60</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #12201e;
-    --card: #1c2b28;
-    --card2: #233532;
-    --accent: #d98c5f;
-    --accent-soft: #f2b88a;
-    --copper: #b87333;
-    --gold: #d4af37;
-    --text: #f4f1ea;
-    --muted: #94a39f;
+    --bg: #F3E6D2;
+    --card: #FAF0DD;
+    --card2: #FFF9EE;
+    --accent: #A9543A;
+    --accent-soft: #4E6B4F;
+    --copper: #A9543A;
+    --gold: #A9543A;
+    --text: #2F2A22;
+    --muted: #6E5F4D;
+    --accent-text: #FBEFE1;
+    --border: #D6C5A8;
   }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html, body { margin: 0; padding: 0; }
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     padding: 10px 12px 30px;
     max-width: 520px;
     margin: 0 auto;
@@ -33,36 +38,54 @@
   header { text-align: center; margin-bottom: 12px; }
   .logo { font-size: 10px; letter-spacing: .4em; text-transform: uppercase; color: var(--copper); margin-bottom: 4px; font-weight: 600; }
   h1 {
-    font-family: "Georgia", "Times New Roman", serif;
-    font-size: 34px; line-height: 1; margin: 0 0 6px; font-weight: 400;
-    background: linear-gradient(180deg, #fff 0%, var(--accent-soft) 70%, var(--accent) 100%);
+    font-family: "Playfair Display", "Georgia", serif;
+    font-size: 34px; line-height: 1.1; margin: 0 0 6px; font-weight: 500;
+    background: linear-gradient(180deg, #2F2A22 0%, #A9543A 100%);
     -webkit-background-clip: text; background-clip: text; color: transparent;
+    letter-spacing: -0.01em;
   }
   .tagline { color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
   .addr { margin-top: 4px; font-size: 12px; color: var(--muted); }
   .hours { margin-top: 8px; font-size: 11px; color: var(--muted); line-height: 1.5; }
   .hours span { color: var(--accent-soft); font-weight: 600; }
 
-  .promo {
-    display: flex; align-items: center; justify-content: center; gap: 6px;
-    margin: 0 0 14px; padding: 10px 12px; border-radius: 12px;
-    background: linear-gradient(135deg, #2a1c15, #1a1411);
-    border: 1px solid #5a3a20;
-    font-size: 12px; font-weight: 600; color: var(--accent-soft); text-align: center;
+  .promo-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 0 0 14px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #A9543A, #8E432C);
+    border: 1px solid #7A3A26;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-text);
+    text-align: center;
   }
-  .promo .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); animation: pulse 1.6s infinite; flex-shrink: 0; }
+
+  .promo-banner .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-text);
+    box-shadow: 0 0 8px var(--accent-text);
+    animation: pulse 1.6s infinite;
+    flex-shrink: 0;
+  }
   @keyframes pulse { 50% { opacity: .4; } }
 
   .intro-card {
     background: linear-gradient(160deg, var(--card2), var(--card));
-    border: 1px solid #2c3f3b;
+    border: 1px solid var(--border);
     border-radius: 16px;
     padding: 18px 16px;
     margin-bottom: 12px;
   }
   .intro-card h2 {
-    font-family: "Georgia", serif;
-    font-size: 18px; font-weight: 400;
+    font-family: "Playfair Display", "Georgia", serif;
+    font-size: 18px; font-weight: 600;
     color: var(--accent-soft);
     margin: 0 0 8px;
   }
@@ -71,23 +94,23 @@
   .feature { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; }
   .feature .icon {
     flex-shrink: 0; width: 26px; height: 26px; border-radius: 8px;
-    background: #2a1c15; border: 1px solid #5a3a20;
+    background: #F8E7DA; border: 1px solid #D4B89A;
     display: flex; align-items: center; justify-content: center;
     font-size: 13px;
   }
   .feature .txt { font-size: 13px; line-height: 1.4; }
-  .feature .txt strong { color: var(--accent-soft); font-weight: 600; }
+  .feature .txt strong { color: var(--accent); font-weight: 600; }
 
   .games-block {
     background: linear-gradient(160deg, var(--card2), var(--card));
-    border: 1px solid #2c3f3b;
+    border: 1px solid var(--border);
     border-radius: 16px;
     padding: 16px;
     margin-bottom: 12px;
   }
   .games-block h2 {
-    font-family: "Georgia", serif;
-    font-size: 18px; font-weight: 400;
+    font-family: "Playfair Display", "Georgia", serif;
+    font-size: 18px; font-weight: 600;
     color: var(--accent-soft);
     margin: 0 0 6px;
   }
@@ -96,12 +119,12 @@
   .chip {
     font-size: 12px; font-weight: 500;
     padding: 6px 10px; border-radius: 100px;
-    background: #1a2724; border: 1px solid #2f4641;
+    background: var(--card2); border: 1px solid var(--border);
     color: var(--text); white-space: nowrap;
     cursor: pointer; transition: .15s;
   }
   .chip:active { transform: scale(.96); }
-  .chip:hover { border-color: var(--accent); color: var(--accent-soft); }
+  .chip:hover { border-color: var(--accent); color: var(--accent); }
 
   .actions { display: flex; gap: 8px; margin: 14px 0 4px; }
   .btn {
@@ -111,11 +134,10 @@
     cursor: pointer; transition: .2s; border: 1px solid transparent;
     display: inline-block;
   }
-  .btn-menu { background: var(--accent); color: #1a1411; border-color: var(--accent); }
-  .btn-bar { background: transparent; color: var(--accent-soft); border-color: #5a3a20; }
+  .btn-menu { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+  .btn-bar { background: transparent; color: var(--accent-soft); border-color: var(--accent-soft); }
   .btn:active { transform: scale(.98); }
 
-  /* Кнопки звонка */
   .btn-call {
     display: flex; align-items: center; justify-content: center; gap: 8px;
     width: 100%; text-align: center; text-decoration: none;
@@ -128,10 +150,10 @@
   }
   .btn-call:active { transform: scale(.98); }
   .btn-call.primary {
-    background: var(--accent); color: #1a1411; border: 1px solid var(--accent);
+    background: var(--accent); color: var(--accent-text); border: 1px solid var(--accent);
   }
   .btn-call.secondary {
-    background: transparent; color: var(--accent-soft); border: 1px solid #5a3a20;
+    background: transparent; color: var(--accent-soft); border: 1px solid var(--accent-soft);
   }
   .btn-call .phone-icon { font-size: 16px; line-height: 1; }
   .call-hint {
@@ -139,27 +161,16 @@
     margin: 10px 0 0; line-height: 1.4;
   }
 
-  /* Fallback, если tel: не сработал */
-  .call-fallback {
-    display: none;
-    margin-top: 10px; padding: 10px 12px; border-radius: 12px;
-    background: #2a1c15; border: 1px solid #5a3a20;
-    font-size: 12px; color: var(--accent-soft); text-align: center;
-    line-height: 1.5;
-  }
-  .call-fallback.open { display: block; }
-  .call-fallback b { color: #fff; font-size: 15px; letter-spacing: .03em; }
-
   .btn-map-open {
     display: block; width: 100%; text-align: center; text-decoration: none;
     padding: 12px 10px; border-radius: 12px;
     font-size: 13px; font-weight: 700; letter-spacing: .03em;
     background: transparent; color: var(--accent-soft);
-    border: 1px solid #5a3a20;
+    border: 1px solid var(--accent-soft);
     transition: .2s;
   }
   .btn-map-open:active { transform: scale(.98); }
-  .btn-map-open:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-map-open:hover { background: var(--accent-soft); color: var(--accent-text); }
 
   .page { display: none; }
   .page.active { display: block; }
@@ -169,52 +180,267 @@
     font-size: 12px; color: var(--muted); text-decoration: none;
     margin-bottom: 10px; cursor: pointer;
   }
-  .back-link:hover { color: var(--accent-soft); }
+  .back-link:hover { color: var(--accent); }
 
   .page-title {
-    font-family: "Georgia", serif; font-size: 20px; font-weight: 400;
+    font-family: "Playfair Display", "Georgia", serif; font-size: 22px; font-weight: 600;
     color: var(--accent-soft); margin: 0 0 10px;
   }
 
-  nav {
-    display: flex; gap: 6px; overflow-x: auto; padding: 2px 0 10px;
-    scrollbar-width: none; position: sticky; top: 0; z-index: 10;
+  .nav-wrap {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; align-items: center; gap: 4px;
+    padding: 2px 0 10px;
     background: linear-gradient(180deg, var(--bg) 85%, transparent);
   }
-  nav::-webkit-scrollbar { display: none; }
+  .nav-wrap nav {
+    display: flex; gap: 6px; overflow-x: auto;
+    flex: 1 1 auto; min-width: 0;
+    padding: 0; margin: 0;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-wrap nav::-webkit-scrollbar { display: none; }
+
+  .nav-arrow {
+    flex: 0 0 auto;
+    width: 28px; height: 28px; padding: 0;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--accent-soft);
+    font-family: inherit;
+    font-size: 17px; font-weight: 700; line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background .15s, color .15s, border-color .15s,
+                transform .15s, opacity .15s;
+  }
+  .nav-arrow:hover:not(:disabled) {
+    background: var(--accent);
+    color: var(--accent-text);
+    border-color: var(--accent);
+  }
+  .nav-arrow:active:not(:disabled) { transform: scale(.9); }
+  .nav-arrow:disabled { opacity: .3; cursor: default; }
+
   .tab {
     flex: 0 0 auto; padding: 8px 12px; border-radius: 100px;
     background: var(--card); color: var(--muted);
-    border: 1px solid #2c3f3b; font-size: 12px; font-weight: 600;
+    border: 1px solid var(--border); font-size: 12px; font-weight: 600;
     letter-spacing: .03em; cursor: pointer; transition: .2s; white-space: nowrap;
   }
-  .tab.active { background: var(--accent); color: #1a1411; border-color: var(--accent); }
+  .tab.active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
 
   .section { display: none; animation: fade .3s ease; }
   .section.active { display: block; }
   @keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 
-  .note { font-size: 11px; color: var(--accent-soft); margin: 0 0 10px; letter-spacing: .02em; font-weight: 600; text-transform: uppercase; }
-  .subhead { font-family: "Georgia", serif; font-size: 14px; color: var(--accent-soft); margin: 16px 0 8px; border-bottom: 1px solid #2c3f3b; padding-bottom: 4px; }
+  .note { font-size: 11px; color: var(--accent); margin: 0 0 10px; letter-spacing: .02em; font-weight: 600; text-transform: uppercase; }
+  .subhead { font-family: "Playfair Display", "Georgia", serif; font-size: 16px; font-weight: 600; color: var(--accent-soft); margin: 16px 0 10px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
 
+  /* ===== СТРУКТУРА ДЛЯ ЦЕН И ГРАММОВОК ===== */
   .item {
-    display: flex; justify-content: space-between; align-items: center; gap: 10px;
-    padding: 10px 14px; margin-bottom: 6px; border-radius: 12px;
+    display: flex; 
+    align-items: center; 
+    gap: 12px;
+    padding: 10px 14px; 
+    margin-bottom: 6px; 
+    border-radius: 12px;
     background: linear-gradient(160deg, var(--card2), var(--card));
-    border: 1px solid #2c3f3b;
+    border: 1px solid var(--border);
   }
-  .item .info { flex: 1; }
-  .item .name { font-size: 14px; font-weight: 500; line-height: 1.2; }
-  .item .price-col { text-align: right; display: flex; flex-direction: column; justify-content: center; min-width: 55px; }
-  .item .price { font-family: "Georgia", serif; color: var(--gold); font-size: 15px; white-space: nowrap; font-weight: 600; }
-  .item .vol { font-size: 10px; color: var(--muted); margin-top: 1px; }
+  .item .name { 
+    flex: 1; 
+    font-size: 13px; 
+    font-weight: 500; 
+    line-height: 1.3; 
+  }
+  .item .price-col { 
+    flex: 0 0 80px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    font-family: "Montserrat", sans-serif; 
+    color: var(--gold); 
+    font-size: 14px; 
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .item .weight {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    margin-right: 6px;
+  }
+  .item .price {
+    text-align: right;
+  }
 
   .badge {
     display: inline-block; font-size: 8px; letter-spacing: .05em; text-transform: uppercase;
-    color: var(--accent-soft); border: 1px solid #5a3a20; border-radius: 4px;
+    color: var(--accent); border: 1px solid var(--accent); border-radius: 4px;
     padding: 1px 4px; margin-left: 4px; vertical-align: middle;
   }
-  .badge.promo { color: #ffd9d4; border-color: #8a3a30; background: #3a1a15; }
+  .badge.promo {
+    color: var(--accent-text); border-color: var(--accent); background: var(--accent);
+  }
+
+  /* ===== Острота: 3 перчика ===== */
+  .spice {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    margin-left: 4px;
+    vertical-align: middle;
+    font-size: 10px;
+    line-height: 1;
+  }
+  .spice .p {
+    display: inline-block;
+    font-size: 11px;
+    line-height: 1;
+    opacity: 0.18;
+    filter: grayscale(1);
+    transition: opacity .2s, filter .2s;
+  }
+  .spice .p.on {
+    opacity: 1;
+    filter: none;
+  }
+
+  /* Соусы */
+  .sauce-list {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin: 0 0 10px;
+  }
+  .sauce {
+    font-size: 12px; font-weight: 500;
+    padding: 6px 10px; border-radius: 100px;
+    background: var(--card2); border: 1px solid var(--border);
+    color: var(--text); white-space: nowrap;
+  }
+
+  /* Паста-герой */
+  .pasta-hero {
+    text-align: center;
+    font-family: "Playfair Display", "Georgia", serif;
+    font-size: 24px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin: 10px 0 14px;
+  }
+
+  /* ===== ФОТО-КАРУСЕЛЬ ===== */
+  .photo-carousel {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(47, 42, 34, 0.08);
+  }
+  .carousel-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+  .carousel-slide {
+    flex: 0 0 100%;
+    aspect-ratio: 4 / 3;
+    position: relative;
+    background: #E8D9C0;
+    overflow: hidden;
+  }
+  .carousel-slide img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  .carousel-slide .slide-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 24px 14px 12px;
+    background: linear-gradient(transparent, rgba(47,42,34,0.72));
+    color: #FBEFE1;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .02em;
+    pointer-events: none;
+  }
+  .carousel-dots {
+    position: absolute;
+    bottom: 10px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; gap: 6px;
+    z-index: 2;
+  }
+  .carousel-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: rgba(251, 239, 225, 0.5);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .carousel-dot.active {
+    background: #FBEFE1;
+    transform: scale(1.25);
+  }
+  .carousel-arrow {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(251, 239, 225, 0.85);
+    border: none;
+    color: var(--accent);
+    font-size: 18px; font-weight: 700;
+    line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    -webkit-tap-highlight-color: transparent;
+    transition: background .2s, transform .2s;
+    opacity: 0;
+  }
+  .photo-carousel:hover .carousel-arrow { opacity: 1; }
+  .carousel-arrow:active { transform: translateY(-50%) scale(.9); }
+  .carousel-arrow.prev { left: 8px; }
+  .carousel-arrow.next { right: 8px; }
+  @media (hover: none) {
+    .carousel-arrow { opacity: 0.7; }
+  }
+
+  /* ===== БЛОК БРОНИРОВАНИЯ (внизу) ===== */
+  .booking-section {
+    background: linear-gradient(160deg, var(--card2), var(--card));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 16px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .booking-section h2 {
+    font-family: "Playfair Display", "Georgia", serif;
+    font-size: 18px; font-weight: 600;
+    color: var(--accent-soft);
+    margin: 0 0 6px;
+  }
+  .booking-section .booking-sub {
+    font-size: 13px; line-height: 1.5; color: var(--text);
+    margin: 0 0 14px;
+  }
 
   footer { text-align: center; margin-top: 20px; color: var(--muted); font-size: 10px; line-height: 1.4; }
   footer strong { color: var(--accent-soft); font-weight: 600; }
@@ -223,30 +449,29 @@
   .footer-phone {
     display: inline-flex; align-items: center; gap: 4px;
     margin: 2px 4px; padding: 5px 10px; border-radius: 8px;
-    border: 1px solid #2c3f3b; color: var(--accent-soft);
+    border: 1px solid var(--border); color: var(--accent);
     text-decoration: none; font-size: 11px; transition: .2s;
     position: relative; z-index: 1;
   }
   .footer-phone:active { transform: scale(.97); }
   .footer-phone:hover { border-color: var(--accent); }
 
-  /* Модальное окно */
   .modal-overlay {
-    position: fixed; inset: 0; background: rgba(0,0,0,.7);
+    position: fixed; inset: 0; background: rgba(47, 42, 34, .65);
     display: none; align-items: center; justify-content: center;
     padding: 16px; z-index: 100;
   }
   .modal-overlay.open { display: flex; }
   .modal {
     background: linear-gradient(160deg, var(--card2), var(--card));
-    border: 1px solid #3a504a; border-radius: 16px;
+    border: 1px solid var(--accent); border-radius: 16px;
     max-width: 460px; width: 100%; max-height: 80vh; overflow-y: auto;
     padding: 20px 18px 16px;
     animation: pop .25s ease;
   }
   @keyframes pop { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
   .modal h3 {
-    font-family: "Georgia", serif; font-size: 20px; font-weight: 400;
+    font-family: "Playfair Display", "Georgia", serif; font-size: 20px; font-weight: 600;
     color: var(--accent-soft); margin: 0 0 4px;
   }
   .modal .meta { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 12px; }
@@ -256,7 +481,7 @@
   .modal .close-btn {
     display: block; width: 100%; text-align: center;
     padding: 11px; border-radius: 12px; border: none;
-    background: var(--accent); color: #1a1411;
+    background: var(--accent); color: var(--accent-text);
     font-size: 13px; font-weight: 700; cursor: pointer;
   }
 </style>
@@ -264,7 +489,7 @@
 <body>
 
 <header>
-  <div class="logo">Gastropub · Kazan</div>
+  <div class="logo">Gastrobar · Kazan</div>
   <h1>Гастробар&nbsp;60</h1>
   <div class="tagline">Кухня · Бар · Атмосфера</div>
   <div class="addr">ул. Баумана, 60</div>
@@ -276,14 +501,43 @@
 <!-- ================= ГЛАВНАЯ ================= -->
 <div id="homePage" class="page active">
 
-  <div class="promo">
+  <div class="promo-banner">
     <span class="dot"></span>
     <span>Акция 1+1 на ВСЕ авторские коктейли по 756 ₽</span>
   </div>
 
+  <!-- ФОТО-КАРУСЕЛЬ -->
+  <div class="photo-carousel" id="photoCarousel">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&q=80" alt="Интерьер гастробара" loading="lazy">
+        <div class="slide-caption">Атмосфера гастробара</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&q=80" alt="Авторские коктейли" loading="lazy">
+        <div class="slide-caption">Авторские коктейли</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80" alt="Блюда кухни" loading="lazy">
+        <div class="slide-caption">Кухня</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&q=80" alt="Барная стойка" loading="lazy">
+        <div class="slide-caption">Бар</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800&q=80" alt="Гости за столиком" loading="lazy">
+        <div class="slide-caption">Вечер с друзьями</div>
+      </div>
+    </div>
+    <button class="carousel-arrow prev" id="carouselPrev" aria-label="Предыдущее фото">‹</button>
+    <button class="carousel-arrow next" id="carouselNext" aria-label="Следующее фото">›</button>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+
   <div class="intro-card">
     <h2>О баре</h2>
-    <p>«Гастробар 60» — место, где сочетаются вкусная кухня, авторские коктейли и настольные игры. Тёмный лофт с медными акцентами, приглушённый свет и музыка, под которую хочется остаться до утра.</p>
+    <p>«Гастробар 60» — это идеальный сценарий для вечера, который не хочется прерывать. Гастрономия, авторские коктейли и настолки в одном пространстве.</p>
 
     <div class="feature">
       <div class="icon">🎲</div>
@@ -298,49 +552,18 @@
     <p>Приходите за атмосферой — уходить не захочется.</p>
   </div>
 
-  <!-- Бронирование -->
-  <div class="intro-card" style="text-align:center;">
-    <h2>Забронировать столик</h2>
-    <p style="margin-bottom:14px;">Для свидания, встречи с друзьями или дня рождения. Скажите, что нужна настолка — подготовим.</p>
-
-    <a href="tel:+78432583818"
-       class="btn-call primary js-call"
-       data-phone="+78432583818"
-       aria-label="Позвонить для брони: +7 843 258-38-18"
-       style="margin-bottom:8px;">
-      <span class="phone-icon">📞</span>
-      <span>+7 (843) 258-38-18</span>
-    </a>
-
-    <a href="tel:+79600483818"
-       class="btn-call secondary js-call"
-       data-phone="+79600483818"
-       aria-label="Позвонить для брони: +7 960 048-38-18">
-      <span class="phone-icon">📞</span>
-      <span>+7 (960) 048-38-18</span>
-    </a>
-
-    <p class="call-hint">Нажмите на номер — откроется «Телефон» для звонка</p>
-
-    <div class="call-fallback" id="callFallback">
-      Звонок не открылся автоматически.<br>
-      Наберите номер вручную: <b id="fallbackNumber"></b><br>
-      <span style="font-size:11px;color:var(--muted);">Нажмите и удерживайте номер, чтобы скопировать</span>
-    </div>
-  </div>
-
   <div class="games-block">
     <h2>Настольные игры</h2>
     <p class="games-sub">Нажмите на игру — покажем правила. Берите любую, правила подскажем.</p>
     <div class="chips" id="gameChips"></div>
   </div>
 
-  <!-- Отзывы -->
   <div class="games-block">
     <h2>Отзывы гостей</h2>
     <p class="games-sub">Почитайте, что пишут о нас на картах.</p>
 
     <a href="https://yandex.ru/maps/org/gastrobar_60/1011389841/reviews/?ll=49.115900%2C55.789998&z=16"
+       target="_blank" rel="noopener"
        class="btn-map-open" style="margin-bottom:8px; display:block;">
       ⭐ Отзывы на Яндекс.Картах ↗
     </a>
@@ -357,6 +580,29 @@
     <a href="#" class="btn btn-bar" id="openBar">🍸 Карта бара</a>
   </div>
 
+  <!-- ===== БРОНИРОВАНИЕ (в самом низу главной, после меню и бара) ===== -->
+  <div class="booking-section" id="bookingSection">
+    <h2>Забронировать столик</h2>
+    <p class="booking-sub">Для свидания, встречи с друзьями или дня рождения. Скажите, что нужна настолка — подготовим.</p>
+
+    <a href="tel:+78432583818"
+       class="btn-call primary"
+       aria-label="Позвонить для брони: +7 843 258-38-18"
+       style="margin-bottom:8px;">
+      <span class="phone-icon">📞</span>
+      <span>+7 (843) 258-38-18</span>
+    </a>
+
+    <a href="tel:+79600483818"
+       class="btn-call secondary"
+       aria-label="Позвонить для брони: +7 960 048-38-18">
+      <span class="phone-icon">📞</span>
+      <span>+7 (960) 048-38-18</span>
+    </a>
+
+    <p class="call-hint">Нажмите на номер — откроется «Телефон» для звонка</p>
+  </div>
+
 </div>
 
 <!-- ================= МЕНЮ (КУХНЯ) ================= -->
@@ -365,117 +611,149 @@
   <a href="#" class="back-link back">‹ На главную</a>
   <div class="page-title">Меню · Кухня</div>
 
-  <nav id="menuNav">
-    <button class="tab active" data-tab="m-zakuski">Закуски</button>
-    <button class="tab" data-tab="m-salaty">Салаты</button>
-    <button class="tab" data-tab="m-supy">Супы</button>
-    <button class="tab" data-tab="m-nac">Национальные</button>
-    <button class="tab" data-tab="m-pasta">Паста собери сам</button>
-    <button class="tab" data-tab="m-vtorye">Вторые блюда</button>
-    <button class="tab" data-tab="m-stejki">Стейки</button>
-    <button class="tab" data-tab="m-rebra">Свиные ребрышки</button>
-    <button class="tab" data-tab="m-garniry">Гарниры</button>
-    <button class="tab" data-tab="m-deserty">Десерты</button>
-  </nav>
+  <div class="nav-wrap">
+    <button type="button" class="nav-arrow nav-prev" aria-label="Предыдущая категория">‹</button>
 
+    <nav id="menuNav">
+      <button class="tab active" data-tab="m-zakuski">Закуски</button>
+      <button class="tab" data-tab="m-salaty">Салаты</button>
+      <button class="tab" data-tab="m-supy">Супы</button>
+      <button class="tab" data-tab="m-nac">Национальные</button>
+      <button class="tab" data-tab="m-pasta">Паста собери сам</button>
+      <button class="tab" data-tab="m-vtorye">Вторые блюда</button>
+      <button class="tab" data-tab="m-stejki">Стейки</button>
+      <button class="tab" data-tab="m-rebra">Свиные ребрышки</button>
+      <button class="tab" data-tab="m-garniry">Гарниры</button>
+      <button class="tab" data-tab="m-deserty">Десерты</button>
+    </nav>
+
+    <button type="button" class="nav-arrow nav-next" aria-label="Следующая категория">›</button>
+  </div>
+
+  <!-- ЗАКУСКИ -->
   <section class="section active" id="m-zakuski">
-    <div class="item"><div class="info"><div class="name">Луковые кольца</div></div><div class="price-col"><div class="price">370 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Фисташки</div></div><div class="price-col"><div class="price">370 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Сырные шарики</div></div><div class="price-col"><div class="price">490 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Хлебная корзинка с маслом</div></div><div class="price-col"><div class="price">250 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Куриные крылья <span class="badge promo">хит</span></div></div><div class="price-col"><div class="price">500 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Тигровые креветки с соусом васаби</div></div><div class="price-col"><div class="price">850 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Блины с форелью <span class="badge promo">хит</span></div></div><div class="price-col"><div class="price">850 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Сельдь с картофелем</div></div><div class="price-col"><div class="price">350 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Форшмак</div></div><div class="price-col"><div class="price">300 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Сыр в ассортименте</div></div><div class="price-col"><div class="price">800 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Чизбургер</div></div><div class="price-col"><div class="price">500 ₽</div></div></div>
+    <div class="note">Соус на выбор* — к блюдам, где указано</div>
+
+    <div class="item"><div class="name">Луковые кольца. Соус на выбор*</div><div class="price-col"><span class="weight">100г</span><span class="price">370 ₽</span></div></div>
+    <div class="item"><div class="name">Фисташки</div><div class="price-col"><span class="weight">50г</span><span class="price">320 ₽</span></div></div>
+    <div class="item"><div class="name">Сырные шарики. Соус на выбор*</div><div class="price-col"><span class="weight">150г</span><span class="price">490 ₽</span></div></div>
+    <div class="item"><div class="name">Хлебная корзинка с маслом</div><div class="price-col"><span class="weight">140г</span><span class="price">250 ₽</span></div></div>
+    <div class="item"><div class="name">Куриные крылья. Соус на выбор* <span class="spice"><span class="p on">🌶</span><span class="p">🌶</span><span class="p">🌶</span></span></div><div class="price-col"><span class="weight">250г</span><span class="price">500 ₽</span></div></div>
+    <div class="item"><div class="name">Тигровые креветки с соусом васаби</div><div class="price-col"><span class="weight">100г</span><span class="price">850 ₽</span></div></div>
+    <div class="item"><div class="name">Блины с форелью <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">250г</span><span class="price">650 ₽</span></div></div>
+    <div class="item"><div class="name">Блины с красной икрой</div><div class="price-col"><span class="weight">180г</span><span class="price">850 ₽</span></div></div>
+    <div class="item"><div class="name">Сельдь с картофелем</div><div class="price-col"><span class="weight">250г</span><span class="price">500 ₽</span></div></div>
+    <div class="item"><div class="name">Форшмак</div><div class="price-col"><span class="weight">150г</span><span class="price">350 ₽</span></div></div>
+    <div class="item"><div class="name">Бутерброды со шпротами</div><div class="price-col"><span class="weight">100г</span><span class="price">300 ₽</span></div></div>
+    <div class="item"><div class="name">Пивной наборчик</div><div class="price-col"><span class="weight">220г</span><span class="price">780 ₽</span></div></div>
+    <div class="item"><div class="name">Сыр в ассортименте</div><div class="price-col"><span class="weight">50г</span><span class="price">250 ₽</span></div></div>
+    <div class="item"><div class="name">Оливки</div><div class="price-col"><span class="weight">100г</span><span class="price">300 ₽</span></div></div>
+    <div class="item"><div class="name">Мегачизбургер</div><div class="price-col"><span class="weight">500г</span><span class="price">850 ₽</span></div></div>
+    <div class="item"><div class="name">Чизбургер</div><div class="price-col"><span class="weight">200г</span><span class="price">500 ₽</span></div></div>
+
+    <div class="item" style="background:transparent; border-style:dashed; margin-top:12px;">
+      <div class="name">Соус на выбор: сырный, барбекю, кетчуп, 1000 островов, кимчи, сметана, горчица, клюквенный, гриль</div>
+      <div class="price-col"><span class="price">90 ₽</span></div>
+    </div>
   </section>
 
+  <!-- САЛАТЫ -->
   <section class="section" id="m-salaty">
-    <div class="item"><div class="info"><div class="name">Цезарь с курицей</div></div><div class="price-col"><div class="price">520 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Цезарь с креветками <span class="badge promo">хит</span></div></div><div class="price-col"><div class="price">600 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Овощной салат с фетаки</div></div><div class="price-col"><div class="price">520 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Ширный салат <span class="badge promo">хит</span></div></div><div class="price-col"><div class="price">650 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">С утиной грудкой</div></div><div class="price-col"><div class="price">570 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Паназия</div></div><div class="price-col"><div class="price">520 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">С кальмаром</div></div><div class="price-col"><div class="price">520 ₽</div></div></div>
+    <div class="item"><div class="name">Цезарь с курицей</div><div class="price-col"><span class="weight">200г</span><span class="price">520 ₽</span></div></div>
+    <div class="item"><div class="name">Цезарь с креветками <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">190г</span><span class="price">600 ₽</span></div></div>
+    <div class="item"><div class="name">Овощной салат с фетаки</div><div class="price-col"><span class="weight">200г</span><span class="price">520 ₽</span></div></div>
+    <div class="item"><div class="name">Шримп салат</div><div class="price-col"><span class="weight">165г</span><span class="price">550 ₽</span></div></div>
+    <div class="item"><div class="name">С утиной грудкой</div><div class="price-col"><span class="weight">130г</span><span class="price">570 ₽</span></div></div>
+    <div class="item"><div class="name">Паназия</div><div class="price-col"><span class="weight">210г</span><span class="price">520 ₽</span></div></div>
+    <div class="item"><div class="name">С кальмаром</div><div class="price-col"><span class="weight">130г</span><span class="price">530 ₽</span></div></div>
   </section>
 
+  <!-- СУПЫ -->
   <section class="section" id="m-supy">
-    <div class="item"><div class="info"><div class="name">Щи с коченостями</div></div><div class="price-col"><div class="price">320/535 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Борщ <span class="badge promo">хит</span></div></div><div class="price-col"><div class="price">350/520 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Том ям с курицей <span class="badge promo">хит</span></div></div><div class="price-col"><div class="price">350/520 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Сырный суп</div></div><div class="price-col"><div class="price">250/600 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Уха сливочная с лососем</div></div><div class="price-col"><div class="price">300/650 ₽</div></div></div>
+    <div class="item"><div class="name">Щи с копченостями</div><div class="price-col"><span class="weight">320г</span><span class="price">535 ₽</span></div></div>
+    <div class="item"><div class="name">Борщ <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">320г</span><span class="price">550 ₽</span></div></div>
+    <div class="item"><div class="name">Том ям с курицей <span class="spice"><span class="p on">🌶</span><span class="p on">🌶</span><span class="p">🌶</span></span></div><div class="price-col"><span class="weight">350г</span><span class="price">520 ₽</span></div></div>
+    <div class="item"><div class="name">Сырный суп</div><div class="price-col"><span class="weight">250г</span><span class="price">600 ₽</span></div></div>
+    <div class="item"><div class="name">Уха сливочная с лососем</div><div class="price-col"><span class="weight">300г</span><span class="price">650 ₽</span></div></div>
   </section>
 
+  <!-- НАЦИОНАЛЬНЫЕ -->
   <section class="section" id="m-nac">
-    <div class="item"><div class="info"><div class="name">Кыстыбый с картофелем</div></div><div class="price-col"><div class="price">220/330 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Кыстыбый с уткой <span class="badge promo">хит</span></div></div><div class="price-col"><div class="price">550 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Кыстыбый с форелью</div></div><div class="price-col"><div class="price">590 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Салат с кониной</div></div><div class="price-col"><div class="price">750 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Бешбармак с кониной</div></div><div class="price-col"><div class="price">490 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Токмач</div></div><div class="price-col"><div class="price">480 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Суп-гуляш с кониной</div></div><div class="price-col"><div class="price">750 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Азу с картофельным пюре</div></div><div class="price-col"><div class="price">750 ₽</div></div></div>
+    <div class="item"><div class="name">Кыстыбый с картофелем</div><div class="price-col"><span class="weight">220г</span><span class="price">330 ₽</span></div></div>
+    <div class="item"><div class="name">Кыстыбый с уткой <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">200г</span><span class="price">550 ₽</span></div></div>
+    <div class="item"><div class="name">Кыстыбый с форелью</div><div class="price-col"><span class="weight">200г</span><span class="price">650 ₽</span></div></div>
+    <div class="item"><div class="name">Салат с кониной</div><div class="price-col"><span class="weight">220г</span><span class="price">590 ₽</span></div></div>
+    <div class="item"><div class="name">Бешбармак с кониной</div><div class="price-col"><span class="weight">370г</span><span class="price">750 ₽</span></div></div>
+    <div class="item"><div class="name">Токмач</div><div class="price-col"><span class="weight">340г</span><span class="price">490 ₽</span></div></div>
+    <div class="item"><div class="name">Суп-гуляш с кониной</div><div class="price-col"><span class="weight">250г</span><span class="price">680 ₽</span></div></div>
+    <div class="item"><div class="name">Азу с картофельным пюре</div><div class="price-col"><span class="weight">380г</span><span class="price">750 ₽</span></div></div>
   </section>
 
+  <!-- ПАСТА СОБЕРИ САМ -->
   <section class="section" id="m-pasta">
     <div class="note">Собери пасту по своему вкусу</div>
-    <div class="subhead">Выбери пасту</div>
-    <div class="item"><div class="info"><div class="name">Тальятелле</div></div><div class="price-col"><div class="price">350 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Феттучине</div></div><div class="price-col"><div class="price">350 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Пенне</div></div><div class="price-col"><div class="price">350 ₽</div></div></div>
+    <div class="pasta-hero">Тальятелле</div>
 
-    <div class="subhead">Выбери соус</div>
-    <div class="item"><div class="info"><div class="name">Болоньезе</div></div><div class="price-col"><div class="price">400 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Карбонара</div></div><div class="price-col"><div class="price">400 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Блю-чиз</div></div><div class="price-col"><div class="price">400 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Томатный с базиликом</div></div><div class="price-col"><div class="price">400 ₽</div></div></div>
+    <div class="subhead">Соус на выбор</div>
+    <div class="item"><div class="name">Пронто</div><div class="price-col"><span class="weight">200г</span><span class="price">350 ₽</span></div></div>
+    <div class="item"><div class="name">Сливки</div><div class="price-col"><span class="weight">200г</span><span class="price">400 ₽</span></div></div>
 
-    <div class="subhead">Добавь топпинг</div>
-    <div class="item"><div class="info"><div class="name">Курица</div></div><div class="price-col"><div class="price">150 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Креветки</div></div><div class="price-col"><div class="price">250 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Пармезан</div></div><div class="price-col"><div class="price">100 ₽</div></div></div>
+    <div class="subhead">Добавки на выбор</div>
+    <div class="item"><div class="name">Бекон</div><div class="price-col"><span class="weight">50г</span><span class="price">200 ₽</span></div></div>
+    <div class="item"><div class="name">Грибы</div><div class="price-col"><span class="weight">50г</span><span class="price">100 ₽</span></div></div>
+    <div class="item"><div class="name">Курица</div><div class="price-col"><span class="weight">50г</span><span class="price">150 ₽</span></div></div>
+    <div class="item"><div class="name">Креветки</div><div class="price-col"><span class="weight">50г</span><span class="price">250 ₽</span></div></div>
+    <div class="item"><div class="name">Лосось</div><div class="price-col"><span class="weight">50г</span><span class="price">300 ₽</span></div></div>
   </section>
 
+  <!-- ВТОРЫЕ БЛЮДА -->
   <section class="section" id="m-vtorye">
-    <div class="item"><div class="info"><div class="name">Жареный картофель с грибами</div></div><div class="price-col"><div class="price">350/500 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Свинина в кисло-сладком соусе с картофелем фри</div></div><div class="price-col"><div class="price">300/650 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Ньокки с соусом блю-чиз</div></div><div class="price-col"><div class="price">350/600 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Пшеничная лапша с лососем в терияки</div></div><div class="price-col"><div class="price">330/850 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Треска с картофелем беби</div></div><div class="price-col"><div class="price">275/750 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Томленая говядина с овощами</div></div><div class="price-col"><div class="price">260/550 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Колбаски из баранины</div></div><div class="price-col"><div class="price">250/550 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Куриные шашлычки</div></div><div class="price-col"><div class="price">250/500 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Курица карри с рисом</div></div><div class="price-col"><div class="price">300/500 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Чилипотле <span class="badge promo">хит</span></div></div><div class="price-col"><div class="price">380/750 ₽</div></div></div>
+    <div class="item"><div class="name">Жареный картофель с грибами</div><div class="price-col"><span class="weight">350г</span><span class="price">500 ₽</span></div></div>
+    <div class="item"><div class="name">Свинина в кисло-сладком соусе с картофелем фри</div><div class="price-col"><span class="weight">300г</span><span class="price">650 ₽</span></div></div>
+    <div class="item"><div class="name">Ньокки с соусом блю-чиз</div><div class="price-col"><span class="weight">220г</span><span class="price">650 ₽</span></div></div>
+    <div class="item"><div class="name">Пшеничная лапша с лососем в терияки</div><div class="price-col"><span class="weight">210г</span><span class="price">600 ₽</span></div></div>
+    <div class="item"><div class="name">Треска с картофелем беби</div><div class="price-col"><span class="weight">330г</span><span class="price">850 ₽</span></div></div>
+    <div class="item"><div class="name">Томленая говядина с овощами</div><div class="price-col"><span class="weight">275г</span><span class="price">750 ₽</span></div></div>
+    <div class="item"><div class="name">Колбаски из баранины</div><div class="price-col"><span class="weight">260г</span><span class="price">550 ₽</span></div></div>
+    <div class="item"><div class="name">Куриные шашлычки</div><div class="price-col"><span class="weight">250г</span><span class="price">550 ₽</span></div></div>
+    <div class="item"><div class="name">Курица карри с рисом</div><div class="price-col"><span class="weight">300г</span><span class="price">500 ₽</span></div></div>
+    <div class="item"><div class="name">Фахитос <span class="spice"><span class="p on">🌶</span><span class="p on">🌶</span><span class="p">🌶</span></span></div><div class="price-col"><span class="weight">380г</span><span class="price">750 ₽</span></div></div>
   </section>
 
+  <!-- СТЕЙКИ -->
   <section class="section" id="m-stejki">
-    <div class="item"><div class="info"><div class="name">Нью-Йорк</div></div><div class="price-col"><div class="price">1200/950 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Минон из конины</div></div><div class="price-col"><div class="price">1500/980 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Утиная грудка</div></div><div class="price-col"><div class="price">1300/750 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Лосось</div></div><div class="price-col"><div class="price">1500/850 ₽</div></div></div>
+    <div class="item"><div class="name">Нью-Йорк <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">120г</span><span class="price">950 ₽</span></div></div>
+    <div class="item"><div class="name">Миньон из конины</div><div class="price-col"><span class="weight">150г</span><span class="price">980 ₽</span></div></div>
+    <div class="item"><div class="name">Утиная грудка</div><div class="price-col"><span class="weight">130г</span><span class="price">750 ₽</span></div></div>
+    <div class="item"><div class="name">Лосось</div><div class="price-col"><span class="weight">150г</span><span class="price">850 ₽</span></div></div>
   </section>
 
+  <!-- СВИНЫЕ РЕБРЫШКИ -->
   <section class="section" id="m-rebra">
-    <div class="item"><div class="info"><div class="name">Свиные ребрышки <span class="badge promo">хит</span></div></div><div class="price-col"><div class="price">2800/800 ₽</div></div></div>
+    <div class="item"><div class="name">Свиные ребрышки <span class="spice"><span class="p on">🌶</span><span class="p on">🌶</span><span class="p on">🌶</span></span></div><div class="price-col"><span class="weight">280г</span><span class="price">800 ₽</span></div></div>
+
+    <div class="subhead">Соусы на выбор</div>
+    <div class="sauce-list">
+      <span class="sauce">Барбекю</span>
+      <span class="sauce">Сырный</span>
+      <span class="sauce">Том ям</span>
+    </div>
   </section>
 
+  <!-- ГАРНИРЫ -->
   <section class="section" id="m-garniry">
-    <div class="item"><div class="info"><div class="name">Картофель фри</div></div><div class="price-col"><div class="price">100/250 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Картофельные дольки с пармезаном</div></div><div class="price-col"><div class="price">150/350 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Печеные овощи</div></div><div class="price-col"><div class="price">200/450 ₽</div></div></div>
+    <div class="item"><div class="name">Картофель фри</div><div class="price-col"><span class="weight">100г</span><span class="price">250 ₽</span></div></div>
+    <div class="item"><div class="name">Картофельные дольки с пармезаном и трюфельным маслом</div><div class="price-col"><span class="weight">150г</span><span class="price">350 ₽</span></div></div>
+    <div class="item"><div class="name">Печеные овощи</div><div class="price-col"><span class="weight">200г</span><span class="price">450 ₽</span></div></div>
   </section>
 
+  <!-- ДЕСЕРТЫ -->
   <section class="section" id="m-deserty">
-    <div class="item"><div class="info"><div class="name">Штрудель яблочный</div></div><div class="price-col"><div class="price">520 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Чизкейк классический</div></div><div class="price-col"><div class="price">520 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Торт Три шоколада</div></div><div class="price-col"><div class="price">520 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Чак-чак</div></div><div class="price-col"><div class="price">400 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Мороженое фисташковое с кешью</div></div><div class="price-col"><div class="price">480 ₽</div></div></div>
+    <div class="item"><div class="name">Штрудель яблочный</div><div class="price-col"><span class="price">520 ₽</span></div></div>
+    <div class="item"><div class="name">Чизкейк классический</div><div class="price-col"><span class="price">520 ₽</span></div></div>
+    <div class="item"><div class="name">Торт Три шоколада <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="price">520 ₽</span></div></div>
+    <div class="item"><div class="name">Чак-чак</div><div class="price-col"><span class="price">400 ₽</span></div></div>
+    <div class="item"><div class="name">Мороженое фисташковое с кешью</div><div class="price-col"><span class="price">480 ₽</span></div></div>
   </section>
 
 </div>
@@ -486,225 +764,242 @@
   <a href="#" class="back-link back">‹ На главную</a>
   <div class="page-title">Карта бара</div>
 
-  <nav id="barNav">
-    <button class="tab active" data-tab="b-smuzi">Смузи</button>
-    <button class="tab" data-tab="b-soki">Свежевыжатые соки</button>
-    <button class="tab" data-tab="b-milkshake">Молочные коктейли</button>
-    <button class="tab" data-tab="b-napitki">Напитки</button>
-    <button class="tab" data-tab="b-limonady">Лимонады</button>
-    <button class="tab" data-tab="b-chaj">Чай</button>
-    <button class="tab" data-tab="b-kofe">Кофе</button>
-    <button class="tab" data-tab="b-nastojki">Настойки</button>
-    <button class="tab" data-tab="b-vodka">Водка</button>
-    <button class="tab" data-tab="b-likery">Ликеры</button>
-    <button class="tab" data-tab="b-vermut">Вермут</button>
-    <button class="tab" data-tab="b-rom">Ром</button>
-    <button class="tab" data-tab="b-dzhin">Джин</button>
-    <button class="tab" data-tab="b-tekila">Текила</button>
-    <button class="tab" data-tab="b-konyak">Коньяк</button>
-    <button class="tab" data-tab="b-kalvados">Кальвадос</button>
-    <button class="tab" data-tab="b-viski-single">Виски односолодовый</button>
-    <button class="tab" data-tab="b-viski-blend">Виски купажированный</button>
-    <button class="tab" data-tab="b-pivo-razl">Пиво разливное</button>
-    <button class="tab" data-tab="b-pivo-but">Пиво бутылочное</button>
-    <button class="tab" data-tab="b-vino">Винная карта</button>
-    <button class="tab" data-tab="b-glintvejn">Глинтвейн</button>
-    <button class="tab" data-tab="b-avtorskie">Авторские коктейли</button>
-    <button class="tab" data-tab="b-klassika">Классические коктейли</button>
-    <button class="tab" data-tab="b-shoty">Шоты</button>
-  </nav>
+  <div class="nav-wrap">
+    <button type="button" class="nav-arrow nav-prev" aria-label="Предыдущая категория">‹</button>
+
+    <nav id="barNav">
+      <button class="tab active" data-tab="b-smuzi">Смузи</button>
+      <button class="tab" data-tab="b-soki">Соки</button>
+      <button class="tab" data-tab="b-milkshake">Молочные коктейли</button>
+      <button class="tab" data-tab="b-napitki">Напитки</button>
+      <button class="tab" data-tab="b-limonady">Лимонады</button>
+      <button class="tab" data-tab="b-chaj">Чай</button>
+      <button class="tab" data-tab="b-kofe">Кофе</button>
+      <button class="tab" data-tab="b-nastojki">Настойки</button>
+      <button class="tab" data-tab="b-vodka">Водка</button>
+      <button class="tab" data-tab="b-likery">Ликеры</button>
+      <button class="tab" data-tab="b-vermut">Вермут</button>
+      <button class="tab" data-tab="b-rom">Ром</button>
+      <button class="tab" data-tab="b-dzhin">Джин</button>
+      <button class="tab" data-tab="b-tekila">Текила</button>
+      <button class="tab" data-tab="b-konyak">Коньяк</button>
+      <button class="tab" data-tab="b-kalvados">Кальвадос</button>
+      <button class="tab" data-tab="b-viski-single">Виски односолодовый</button>
+      <button class="tab" data-tab="b-viski-blend">Виски купажированный</button>
+      <button class="tab" data-tab="b-pivo-razl">Пиво разливное</button>
+      <button class="tab" data-tab="b-pivo-but">Пиво бутылочное</button>
+      <button class="tab" data-tab="b-vino">Винная карта</button>
+      <button class="tab" data-tab="b-glintvejn">Глинтвейн</button>
+      <button class="tab" data-tab="b-avtorskie">Авторские коктейли</button>
+      <button class="tab" data-tab="b-klassika">Классические коктейли</button>
+      <button class="tab" data-tab="b-shoty">Шоты</button>
+    </nav>
+
+    <button type="button" class="nav-arrow nav-next" aria-label="Следующая категория">›</button>
+  </div>
 
   <section class="section active" id="b-smuzi">
-    <div class="item"><div class="info"><div class="name">Облепиховый</div></div><div class="price-col"><div class="price">450 ₽</div><div class="vol">0.3 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Бана-черн-смородина</div></div><div class="price-col"><div class="price">450 ₽</div><div class="vol">0.3 л</div></div></div>
+    <div class="item"><div class="name">Облепиховый</div><div class="price-col"><span class="weight">0.3 л</span><span class="price">450 ₽</span></div></div>
+    <div class="item"><div class="name">Банан-черная смородина</div><div class="price-col"><span class="weight">0.3 л</span><span class="price">450 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-soki">
-    <div class="item"><div class="info"><div class="name">Апельсиновый</div></div><div class="price-col"><div class="price">400 ₽</div><div class="vol">0.2 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Грейпфрутовый</div></div><div class="price-col"><div class="price">450 ₽</div><div class="vol">0.2 л</div></div></div>
+    <div class="item"><div class="name">Апельсиновый</div><div class="price-col"><span class="weight">0.2 л</span><span class="price">400 ₽</span></div></div>
+    <div class="item"><div class="name">Грейпфрутовый</div><div class="price-col"><span class="weight">0.2 л</span><span class="price">450 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-milkshake">
-    <div class="item"><div class="info"><div class="name">Халва</div></div><div class="price-col"><div class="price">450 ₽</div><div class="vol">0.3 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Черная смородина</div></div><div class="price-col"><div class="price">450 ₽</div><div class="vol">0.3 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Ванильный</div></div><div class="price-col"><div class="price">450 ₽</div><div class="vol">0.3 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Шоколадный</div></div><div class="price-col"><div class="price">450 ₽</div><div class="vol">0.3 л</div></div></div>
+    <div class="item"><div class="name">Халва</div><div class="price-col"><span class="weight">0.3 л</span><span class="price">450 ₽</span></div></div>
+    <div class="item"><div class="name">Черная смородина</div><div class="price-col"><span class="weight">0.3 л</span><span class="price">450 ₽</span></div></div>
+    <div class="item"><div class="name">Ванильный</div><div class="price-col"><span class="weight">0.3 л</span><span class="price">450 ₽</span></div></div>
+    <div class="item"><div class="name">Шоколадный</div><div class="price-col"><span class="weight">0.3 л</span><span class="price">450 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-napitki">
-    <div class="item"><div class="info"><div class="name">Минеральная вода Мэвер</div></div><div class="price-col"><div class="price">270 ₽</div><div class="vol">500 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Эвервес кола</div></div><div class="price-col"><div class="price">300 ₽</div><div class="vol">250 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Тоник</div></div><div class="price-col"><div class="price">250 ₽</div><div class="vol">330 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Адреналин раш</div></div><div class="price-col"><div class="price">250 ₽</div><div class="vol">250 мл</div></div></div>
+    <div class="item"><div class="name">Минеральная вода Мевер</div><div class="price-col"><span class="weight">500 мл</span><span class="price">270 ₽</span></div></div>
+    <div class="item"><div class="name">Эвервес кола</div><div class="price-col"><span class="weight">250 мл</span><span class="price">300 ₽</span></div></div>
+    <div class="item"><div class="name">Тоник</div><div class="price-col"><span class="weight">330 мл</span><span class="price">250 ₽</span></div></div>
+    <div class="item"><div class="name">Адреналин раш</div><div class="price-col"><span class="weight">250 мл</span><span class="price">250 ₽</span></div></div>
+    <div class="item"><div class="name">Сок в ассортименте</div><div class="price-col"><span class="weight">200 мл</span><span class="price">250 ₽</span></div></div>
+    <div class="item"><div class="name">Морс в ассортименте</div><div class="price-col"><span class="weight">300 мл</span><span class="price">200 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-limonady">
-    <div class="item"><div class="info"><div class="name">Манго-маракуйя</div></div><div class="price-col"><div class="price">900 ₽</div><div class="vol">1 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Малина-базилик</div></div><div class="price-col"><div class="price">900 ₽</div><div class="vol">1 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Мохито</div></div><div class="price-col"><div class="price">900 ₽</div><div class="vol">1 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Облепиха-мандарин</div></div><div class="price-col"><div class="price">900 ₽</div><div class="vol">1 л</div></div></div>
+    <div class="item"><div class="name">Манго-маракуйя</div><div class="price-col"><span class="weight">1 л</span><span class="price">900 ₽</span></div></div>
+    <div class="item"><div class="name">Малина-базилик</div><div class="price-col"><span class="weight">1 л</span><span class="price">900 ₽</span></div></div>
+    <div class="item"><div class="name">Мохито</div><div class="price-col"><span class="weight">1 л</span><span class="price">900 ₽</span></div></div>
+    <div class="item"><div class="name">Облепиха-мандарин</div><div class="price-col"><span class="weight">1 л</span><span class="price">900 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-chaj">
-    <div class="item"><div class="info"><div class="name">Татарский чай</div></div><div class="price-col"><div class="price">560 ₽</div><div class="vol">0.7 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Облепиховый</div></div><div class="price-col"><div class="price">500 ₽</div><div class="vol">0.7 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Клюквенный</div></div><div class="price-col"><div class="price">500 ₽</div><div class="vol">0.7 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Малина-мандарин</div></div><div class="price-col"><div class="price">500 ₽</div><div class="vol">0.7 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Иммунный</div></div><div class="price-col"><div class="price">500 ₽</div><div class="vol">0.7 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Черная смородина</div></div><div class="price-col"><div class="price">500 ₽</div><div class="vol">0.7 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Ассам</div></div><div class="price-col"><div class="price">400 ₽</div><div class="vol">0.7 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Черный чай с чабрецом</div></div><div class="price-col"><div class="price">400 ₽</div><div class="vol">0.7 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Сенча</div></div><div class="price-col"><div class="price">400 ₽</div><div class="vol">0.7 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Молочный улун</div></div><div class="price-col"><div class="price">450 ₽</div><div class="vol">0.7 л</div></div></div>
+    <div class="item"><div class="name">Татарский чай</div><div class="price-col"><span class="weight">0.7 л</span><span class="price">560 ₽</span></div></div>
+    <div class="item"><div class="name">Облепиховый</div><div class="price-col"><span class="weight">0.7 л</span><span class="price">500 ₽</span></div></div>
+    <div class="item"><div class="name">Клюквенный</div><div class="price-col"><span class="weight">0.7 л</span><span class="price">500 ₽</span></div></div>
+    <div class="item"><div class="name">Малина-мандарин</div><div class="price-col"><span class="weight">0.7 л</span><span class="price">500 ₽</span></div></div>
+    <div class="item"><div class="name">Иммунный</div><div class="price-col"><span class="weight">0.7 л</span><span class="price">500 ₽</span></div></div>
+    <div class="item"><div class="name">Черная смородина</div><div class="price-col"><span class="weight">0.7 л</span><span class="price">500 ₽</span></div></div>
+    <div class="item"><div class="name">Ассам</div><div class="price-col"><span class="weight">0.7 л</span><span class="price">400 ₽</span></div></div>
+    <div class="item"><div class="name">Черный чай с чабрецом</div><div class="price-col"><span class="weight">0.7 л</span><span class="price">400 ₽</span></div></div>
+    <div class="item"><div class="name">Сенча</div><div class="price-col"><span class="weight">0.7 л</span><span class="price">400 ₽</span></div></div>
+    <div class="item"><div class="name">Молочный улун</div><div class="price-col"><span class="weight">0.7 л</span><span class="price">450 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-kofe">
-    <div class="item"><div class="info"><div class="name">Эспрессо</div></div><div class="price-col"><div class="price">200 ₽</div><div class="vol">30 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Американо</div></div><div class="price-col"><div class="price">280 ₽</div><div class="vol">180 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Капучино</div></div><div class="price-col"><div class="price">280 ₽</div><div class="vol">180 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Латте</div></div><div class="price-col"><div class="price">300 ₽</div><div class="vol">220 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Глясе</div></div><div class="price-col"><div class="price">300 ₽</div><div class="vol">200 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Раф</div></div><div class="price-col"><div class="price">300 ₽</div><div class="vol">220 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Флэт Уайт</div></div><div class="price-col"><div class="price">300 ₽</div><div class="vol">220 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Корретто (с ликером)</div></div><div class="price-col"><div class="price">350 ₽</div><div class="vol">200 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Какао</div></div><div class="price-col"><div class="price">360 ₽</div><div class="vol">220 мл</div></div></div>
+    <div class="item"><div class="name">Эспрессо</div><div class="price-col"><span class="weight">30 мл</span><span class="price">200 ₽</span></div></div>
+    <div class="item"><div class="name">Американо</div><div class="price-col"><span class="weight">180 мл</span><span class="price">230 ₽</span></div></div>
+    <div class="item"><div class="name">Капучино</div><div class="price-col"><span class="weight">180 мл</span><span class="price">280 ₽</span></div></div>
+    <div class="item"><div class="name">Латте</div><div class="price-col"><span class="weight">220 мл</span><span class="price">300 ₽</span></div></div>
+    <div class="item"><div class="name">Глясе</div><div class="price-col"><span class="weight">200 мл</span><span class="price">300 ₽</span></div></div>
+    <div class="item"><div class="name">Раф</div><div class="price-col"><span class="weight">220 мл</span><span class="price">300 ₽</span></div></div>
+    <div class="item"><div class="name">Флэт Уайт</div><div class="price-col"><span class="weight">220 мл</span><span class="price">300 ₽</span></div></div>
+    <div class="item"><div class="name">Корретто (с ликером)</div><div class="price-col"><span class="weight">200 мл</span><span class="price">350 ₽</span></div></div>
+    <div class="item"><div class="name">Какао</div><div class="price-col"><span class="weight">220 мл</span><span class="price">360 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-nastojki">
-    <div class="item"><div class="info"><div class="name">Купава яблоко / лимон / слива</div></div><div class="price-col"><div class="price">256 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Тундра черника-смородина / брусника-клюква</div></div><div class="price-col"><div class="price">256 ₽</div><div class="vol">50 мл</div></div></div>
+    <div class="item"><div class="name">Купава яблоко</div><div class="price-col"><span class="weight">50 мл</span><span class="price">256 ₽</span></div></div>
+    <div class="item"><div class="name">Купава лимон</div><div class="price-col"><span class="weight">50 мл</span><span class="price">256 ₽</span></div></div>
+    <div class="item"><div class="name">Купава слива</div><div class="price-col"><span class="weight">50 мл</span><span class="price">256 ₽</span></div></div>
+    <div class="item"><div class="name">Тундра черника-смородина</div><div class="price-col"><span class="weight">50 мл</span><span class="price">256 ₽</span></div></div>
+    <div class="item"><div class="name">Тундра брусника-клюква <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">50 мл</span><span class="price">256 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-vodka">
-    <div class="item"><div class="info"><div class="name">Ханская</div></div><div class="price-col"><div class="price">256 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Царская ледяная</div></div><div class="price-col"><div class="price">206 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Абсолют Малина</div></div><div class="price-col"><div class="price">456 ₽</div><div class="vol">50 мл</div></div></div>
+    <div class="item"><div class="name">Ханская, Татарстан</div><div class="price-col"><span class="weight">50 мл</span><span class="price">256 ₽</span></div></div>
+    <div class="item"><div class="name">Царская ледяная</div><div class="price-col"><span class="weight">50 мл</span><span class="price">206 ₽</span></div></div>
+    <div class="item"><div class="name">Абсолют Малина</div><div class="price-col"><span class="weight">50 мл</span><span class="price">456 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-likery">
-    <div class="item"><div class="info"><div class="name">Абсент Ксента</div></div><div class="price-col"><div class="price">706 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Егермейстер</div></div><div class="price-col"><div class="price">646 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Самбука</div></div><div class="price-col"><div class="price">456 ₽</div><div class="vol">50 мл</div></div></div>
+    <div class="item"><div class="name">Абсент Ксента, Италия</div><div class="price-col"><span class="weight">50 мл</span><span class="price">706 ₽</span></div></div>
+    <div class="item"><div class="name">Егермейстер, Германия</div><div class="price-col"><span class="weight">50 мл</span><span class="price">646 ₽</span></div></div>
+    <div class="item"><div class="name">Самбука, Россия</div><div class="price-col"><span class="weight">50 мл</span><span class="price">456 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-vermut">
-    <div class="item"><div class="info"><div class="name">Мартини Бьянко</div></div><div class="price-col"><div class="price">546 ₽</div><div class="vol">100 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Мартини Россо</div></div><div class="price-col"><div class="price">546 ₽</div><div class="vol">100 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Мартини Фиеро</div></div><div class="price-col"><div class="price">546 ₽</div><div class="vol">100 мл</div></div></div>
+    <div class="item"><div class="name">Мартини Бьянко, Италия</div><div class="price-col"><span class="weight">100 мл</span><span class="price">546 ₽</span></div></div>
+    <div class="item"><div class="name">Мартини Россо, Италия</div><div class="price-col"><span class="weight">100 мл</span><span class="price">546 ₽</span></div></div>
+    <div class="item"><div class="name">Мартини Фиеро, Италия</div><div class="price-col"><span class="weight">100 мл</span><span class="price">546 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-rom">
-    <div class="item"><div class="info"><div class="name">Гавана Клуб Ориджинал Аньехо</div></div><div class="price-col"><div class="price">406 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Закапа 23</div></div><div class="price-col"><div class="price">896 ₽</div><div class="vol">50 мл</div></div></div>
+    <div class="item"><div class="name">Гавана Клуб Ориджинал Аньехо, Куба</div><div class="price-col"><span class="weight">50 мл</span><span class="price">406 ₽</span></div></div>
+    <div class="item"><div class="name">Закапа 23, Гватемала</div><div class="price-col"><span class="weight">50 мл</span><span class="price">896 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-dzhin">
-    <div class="item"><div class="info"><div class="name">Бифитер</div></div><div class="price-col"><div class="price">436 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Манки 47</div></div><div class="price-col"><div class="price">946 ₽</div><div class="vol">50 мл</div></div></div>
+    <div class="item"><div class="name">Бифитер, Великобритания</div><div class="price-col"><span class="weight">50 мл</span><span class="price">436 ₽</span></div></div>
+    <div class="item"><div class="name">Манки 47, Германия</div><div class="price-col"><span class="weight">50 мл</span><span class="price">946 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-tekila">
-    <div class="item"><div class="info"><div class="name">Сомбреро Сильвер</div></div><div class="price-col"><div class="price">456 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Патрон Сильвер</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Патрон Репосадо</div></div><div class="price-col"><div class="price">806 ₽</div><div class="vol">50 мл</div></div></div>
+    <div class="item"><div class="name">Сомбреро Сильвер, Мексика</div><div class="price-col"><span class="weight">50 мл</span><span class="price">456 ₽</span></div></div>
+    <div class="item"><div class="name">Патрон Сильвер, Мексика</div><div class="price-col"><span class="weight">50 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Патрон Репосадо, Мексика</div><div class="price-col"><span class="weight">50 мл</span><span class="price">806 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-konyak">
-    <div class="item"><div class="info"><div class="name">Мартель ВСОП</div></div><div class="price-col"><div class="price">796 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Арарат 5*</div></div><div class="price-col"><div class="price">456 ₽</div><div class="vol">50 мл</div></div></div>
+    <div class="item"><div class="name">Мартель ВСОП, Франция</div><div class="price-col"><span class="weight">50 мл</span><span class="price">796 ₽</span></div></div>
+    <div class="item"><div class="name">Арарат 5★, Армения</div><div class="price-col"><span class="weight">50 мл</span><span class="price">456 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-kalvados">
-    <div class="item"><div class="info"><div class="name">Пэр Маглуар ПЭЙ ДЮЖ ВСОП</div></div><div class="price-col"><div class="price">696 ₽</div><div class="vol">50 мл</div></div></div>
+    <div class="item"><div class="name">Пэр Маглуар ПЭЙ ДЮЖ ВСОП, Франция</div><div class="price-col"><span class="weight">50 мл</span><span class="price">696 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-viski-single">
-    <div class="item"><div class="info"><div class="name">Кэтти Сарк</div></div><div class="price-col"><div class="price">606 ₽</div><div class="vol">50 мл</div></div></div>
+    <div class="item"><div class="name">Гленливет 12 лет, Великобритания</div><div class="price-col"><span class="weight">50 мл</span><span class="price">796 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-viski-blend">
-    <div class="item"><div class="info"><div class="name">Виски Волга Валли</div></div><div class="price-col"><div class="price">306 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Джемесон</div></div><div class="price-col"><div class="price">546 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Баллантайнс Файнест</div></div><div class="price-col"><div class="price">546 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Чивас Ригал 12 лет</div></div><div class="price-col"><div class="price">646 ₽</div><div class="vol">50 мл</div></div></div>
+    <div class="item"><div class="name">Виски Волга Вэлли, Татарстан</div><div class="price-col"><span class="weight">50 мл</span><span class="price">306 ₽</span></div></div>
+    <div class="item"><div class="name">Джемесон, Ирландия</div><div class="price-col"><span class="weight">50 мл</span><span class="price">546 ₽</span></div></div>
+    <div class="item"><div class="name">Баллантайнс Файнест, Шотландия</div><div class="price-col"><span class="weight">50 мл</span><span class="price">546 ₽</span></div></div>
+    <div class="item"><div class="name">Чивас Ригал 12 лет, Шотландия</div><div class="price-col"><span class="weight">50 мл</span><span class="price">646 ₽</span></div></div>
+    <div class="item"><div class="name">Кэтти Сарк, Шотландия</div><div class="price-col"><span class="weight">50 мл</span><span class="price">606 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-pivo-razl">
-    <div class="item"><div class="info"><div class="name">Мейзой Арнэ Премиум Лагер</div></div><div class="price-col"><div class="price">376 ₽</div><div class="vol">0.5 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Эдельвейс пшеничное</div></div><div class="price-col"><div class="price">376 ₽</div><div class="vol">0.5 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Крушовице темное</div></div><div class="price-col"><div class="price">376 ₽</div><div class="vol">0.5 л</div></div></div>
+    <div class="item"><div class="name">Мэйзон Арнэ премиум лагер, Россия</div><div class="price-col"><span class="weight">0.5 л</span><span class="price">376 ₽</span></div></div>
+    <div class="item"><div class="name">Эдельвейс пшеничное, Россия</div><div class="price-col"><span class="weight">0.5 л</span><span class="price">376 ₽</span></div></div>
+    <div class="item"><div class="name">Крушовице темное, Россия</div><div class="price-col"><span class="weight">0.5 л</span><span class="price">376 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-pivo-but">
-    <div class="item"><div class="info"><div class="name">Гиннес</div></div><div class="price-col"><div class="price">676 ₽</div><div class="vol">0.44 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Шпатен светлое</div></div><div class="price-col"><div class="price">606 ₽</div><div class="vol">0.5 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Волковская вишня</div></div><div class="price-col"><div class="price">376 ₽</div><div class="vol">0.45 л</div></div></div>
-    <div class="item"><div class="info"><div class="name">Клаусталер</div></div><div class="price-col"><div class="price">376 ₽</div><div class="vol">0.33 л</div></div></div>
+    <div class="item"><div class="name">Гиннес, Ирландия</div><div class="price-col"><span class="weight">0.44 л</span><span class="price">676 ₽</span></div></div>
+    <div class="item"><div class="name">Шпатен светлое, Германия</div><div class="price-col"><span class="weight">0.5 л</span><span class="price">606 ₽</span></div></div>
+    <div class="item"><div class="name">Волковская вишня, Россия</div><div class="price-col"><span class="weight">0.45 л</span><span class="price">376 ₽</span></div></div>
+    <div class="item"><div class="name">Клаусталер 0%, Германия</div><div class="price-col"><span class="weight">0.33 л</span><span class="price">376 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-vino">
-    <div class="subhead">Игристое (150 мл)</div>
-    <div class="item"><div class="info"><div class="name">Кава Бербера белое п/сухое</div></div><div class="price-col"><div class="price">706 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Фрицио Просекко белое брют</div></div><div class="price-col"><div class="price">806 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Меладжери белое брют</div></div><div class="price-col"><div class="price">306 ₽</div></div></div>
+    <div class="subhead">Игристое вино</div>
+    <div class="item"><div class="name">Кава Берберана белое п/сухое, Испания</div><div class="price-col"><span class="weight">750 мл</span><span class="price">1700 ₽</span></div></div>
+    <div class="item"><div class="name">Фрицио Просекко белое брют, Италия</div><div class="price-col"><span class="weight">750 мл</span><span class="price">1800 ₽</span></div></div>
+    <div class="item"><div class="name">Меланжери белое брют, Россия</div><div class="price-col"><span class="weight">150 мл</span><span class="price">306 ₽</span></div></div>
 
-    <div class="subhead">Белое (150 мл)</div>
-    <div class="item"><div class="info"><div class="name">Сангриди Рислинг Мозель</div></div><div class="price-col"><div class="price">376 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Куриано Москато, п/сладкое</div></div><div class="price-col"><div class="price">356 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Павонеро Бьянко, сухое</div></div><div class="price-col"><div class="price">376 ₽</div></div></div>
+    <div class="subhead">Белое вино</div>
+    <div class="item"><div class="name">Сангриди Рислинг Мозель, Германия</div><div class="price-col"><span class="weight">150 мл</span><span class="price">376 ₽</span></div></div>
+    <div class="item"><div class="name">Куриано Москато, п/слад, Чили</div><div class="price-col"><span class="weight">150 мл</span><span class="price">356 ₽</span></div></div>
+    <div class="item"><div class="name">Павонеро Бьянко, сухое, Италия</div><div class="price-col"><span class="weight">150 мл</span><span class="price">376 ₽</span></div></div>
 
-    <div class="subhead">Красное (150 мл)</div>
-    <div class="item"><div class="info"><div class="name">Куриано Карменер, сухое</div></div><div class="price-col"><div class="price">356 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Петер и Петер Пино Нуар Пфальц</div></div><div class="price-col"><div class="price">376 ₽</div></div></div>
-    <div class="item"><div class="info"><div class="name">Киндзмараули, п/сладкое</div></div><div class="price-col"><div class="price">376 ₽</div></div></div>
+    <div class="subhead">Красное вино</div>
+    <div class="item"><div class="name">Куриано Карменер, сухое, Чили</div><div class="price-col"><span class="weight">150 мл</span><span class="price">356 ₽</span></div></div>
+    <div class="item"><div class="name">Петер и Петер Пино Нуар Пфальц, Германия</div><div class="price-col"><span class="weight">150 мл</span><span class="price">376 ₽</span></div></div>
+    <div class="item"><div class="name">Киндзмараули, п/сладкое, Грузия</div><div class="price-col"><span class="weight">150 мл</span><span class="price">376 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-glintvejn">
-    <div class="item"><div class="info"><div class="name">Алкогольный (классический / белый / грушевый)</div></div><div class="price-col"><div class="price">546 ₽</div><div class="vol">220 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Безалкогольный (вишневый сбитень)</div></div><div class="price-col"><div class="price">546 ₽</div><div class="vol">220 мл</div></div></div>
+    <div class="subhead">Классические</div>
+    <div class="item"><div class="name">Классический</div><div class="price-col"><span class="weight">220 мл</span><span class="price">546 ₽</span></div></div>
+    <div class="item"><div class="name">Белый</div><div class="price-col"><span class="weight">220 мл</span><span class="price">546 ₽</span></div></div>
+    <div class="item"><div class="name">Грушевый грот</div><div class="price-col"><span class="weight">220 мл</span><span class="price">546 ₽</span></div></div>
+
+    <div class="subhead">Безалкогольные</div>
+    <div class="item"><div class="name">Вишневый сбитень</div><div class="price-col"><span class="weight">220 мл</span><span class="price">546 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-avtorskie">
-    <div class="note">Все коктейли по акции 1+1 за 756 ₽</div>
-    <div class="item"><div class="info"><div class="name">Тихий час <span class="badge promo">хит</span></div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">170 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Скуф</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">180 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Чилл на пляже</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">230 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Зелёнка</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">180 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Краш</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">180 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">+Вайб</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">180 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Агава-фреш</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">180 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Имба</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">120 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">База</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">130 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Солнце Монако</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">180 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Барби</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">110 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Экспонат <span class="badge promo">хит</span></div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">150 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Альтушка</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">120 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Ред флаг</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">145 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Олигарх</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">110 мл</div></div></div>
+    <div class="note">Все авторские коктейли по акции 1+1 за 756 ₽</div>
+    <div class="item"><div class="name">Тихий час <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">170 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Скуф</div><div class="price-col"><span class="weight">100 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Чилл на пляже</div><div class="price-col"><span class="weight">230 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Зелёнка</div><div class="price-col"><span class="weight">180 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Краш</div><div class="price-col"><span class="weight">180 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">+Вайб</div><div class="price-col"><span class="weight">180 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Агава-фреш</div><div class="price-col"><span class="weight">100 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Имба</div><div class="price-col"><span class="weight">120 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">База</div><div class="price-col"><span class="weight">130 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Солнце Монако</div><div class="price-col"><span class="weight">190 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Барби</div><div class="price-col"><span class="weight">110 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Экспонат <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">150 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Альтушка</div><div class="price-col"><span class="weight">120 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Ред флаг</div><div class="price-col"><span class="weight">145 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Олигарх</div><div class="price-col"><span class="weight">110 мл</span><span class="price">756 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-klassika">
-    <div class="item"><div class="info"><div class="name">Белый русский</div></div><div class="price-col"><div class="price">556 ₽</div><div class="vol">100 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Маргарита</div></div><div class="price-col"><div class="price">556 ₽</div><div class="vol">110 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Лонг Айленд Айс Ти</div></div><div class="price-col"><div class="price">896 ₽</div><div class="vol">250 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Мохито</div></div><div class="price-col"><div class="price">706 ₽</div><div class="vol">270 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Апероль Спритц</div></div><div class="price-col"><div class="price">756 ₽</div><div class="vol">230 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Негрони <span class="badge promo">хит</span></div></div><div class="price-col"><div class="price">656 ₽</div><div class="vol">90 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Май Тай</div></div><div class="price-col"><div class="price">656 ₽</div><div class="vol">220 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Пина Колада</div></div><div class="price-col"><div class="price">656 ₽</div><div class="vol">190 мл</div></div></div>
+    <div class="item"><div class="name">Белый русский</div><div class="price-col"><span class="weight">100 мл</span><span class="price">556 ₽</span></div></div>
+    <div class="item"><div class="name">Маргарита</div><div class="price-col"><span class="weight">110 мл</span><span class="price">556 ₽</span></div></div>
+    <div class="item"><div class="name">Лонг Айленд Айс Ти</div><div class="price-col"><span class="weight">250 мл</span><span class="price">896 ₽</span></div></div>
+    <div class="item"><div class="name">Мохито</div><div class="price-col"><span class="weight">270 мл</span><span class="price">706 ₽</span></div></div>
+    <div class="item"><div class="name">Апероль Спритц</div><div class="price-col"><span class="weight">230 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Негрони <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">90 мл</span><span class="price">656 ₽</span></div></div>
+    <div class="item"><div class="name">Май Тай</div><div class="price-col"><span class="weight">220 мл</span><span class="price">656 ₽</span></div></div>
+    <div class="item"><div class="name">Пина Колада</div><div class="price-col"><span class="weight">190 мл</span><span class="price">656 ₽</span></div></div>
   </section>
 
   <section class="section" id="b-shoty">
-    <div class="note">Все шоты по 456 ₽ за 50 мл</div>
-    <div class="item"><div class="info"><div class="name">Б-52</div></div><div class="price-col"><div class="price">456 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Б-53</div></div><div class="price-col"><div class="price">456 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Татарин</div></div><div class="price-col"><div class="price">456 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Мексиканец <span class="badge promo">хит</span></div></div><div class="price-col"><div class="price">456 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Боярский</div></div><div class="price-col"><div class="price">456 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Рыжая собака</div></div><div class="price-col"><div class="price">456 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Хиросима</div></div><div class="price-col"><div class="price">456 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">Серебряная пуля</div></div><div class="price-col"><div class="price">456 ₽</div><div class="vol">50 мл</div></div></div>
-    <div class="item"><div class="info"><div class="name">От Алисы</div></div><div class="price-col"><div class="price">456 ₽</div><div class="vol">50 мл</div></div></div>
+    <div class="note">Все шоты 50 мл по 456 ₽</div>
+    <div class="item"><div class="name">Б-52</div><div class="price-col"><span class="price">456 ₽</span></div></div>
+    <div class="item"><div class="name">Б-53</div><div class="price-col"><span class="price">456 ₽</span></div></div>
+    <div class="item"><div class="name">Татарин</div><div class="price-col"><span class="price">456 ₽</span></div></div>
+    <div class="item"><div class="name">Мексиканец <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="price">456 ₽</span></div></div>
+    <div class="item"><div class="name">Боярский</div><div class="price-col"><span class="price">456 ₽</span></div></div>
+    <div class="item"><div class="name">Рыжая собака</div><div class="price-col"><span class="price">456 ₽</span></div></div>
+    <div class="item"><div class="name">Хиросима</div><div class="price-col"><span class="price">456 ₽</span></div></div>
+    <div class="item"><div class="name">Серебряная пуля</div><div class="price-col"><span class="price">456 ₽</span></div></div>
+    <div class="item"><div class="name">От Алисы</div><div class="price-col"><span class="price">456 ₽</span></div></div>
   </section>
 
 </div>
@@ -726,10 +1021,10 @@
   <div>ул. Баумана, 60 · Казань</div>
   <div style="margin-top:4px;">Пн–Чт 10:00–24:00 · Пт–Сб 10:00–02:00 · Вс 10:00–24:00</div>
   <div style="margin-top:8px;">
-    <a href="tel:+78432583818" class="footer-phone js-call" data-phone="+78432583818" aria-label="Позвонить: +7 843 258-38-18">
+    <a href="tel:+78432583818" class="footer-phone" aria-label="Позвонить: +7 843 258-38-18">
       📞 +7 (843) 258-38-18
     </a>
-    <a href="tel:+79600483818" class="footer-phone js-call" data-phone="+79600483818" aria-label="Позвонить: +7 960 048-38-18">
+    <a href="tel:+79600483818" class="footer-phone" aria-label="Позвонить: +7 960 048-38-18">
       📞 +7 (960) 048-38-18
     </a>
   </div>
@@ -738,98 +1033,181 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* ============ ЗВОНКИ ============ */
-  var fallback = document.getElementById('callFallback');
-  var fallbackNumber = document.getElementById('fallbackNumber');
+  /* ============ ФОТО-КАРУСЕЛЬ ============ */
+  (function () {
+    var track = document.getElementById('carouselTrack');
+    var slides = track ? track.querySelectorAll('.carousel-slide') : [];
+    var dotsBox = document.getElementById('carouselDots');
+    var prevBtn = document.getElementById('carouselPrev');
+    var nextBtn = document.getElementById('carouselNext');
+    var total = slides.length;
+    var current = 0;
+    var autoTimer = null;
 
-  function makeCall(phone, display) {
-    // Пытаемся открыть через location.href — самый надёжный способ
-    try {
-      window.location.href = 'tel:' + phone;
-    } catch (e) {}
-    // Fallback на случай, если браузер заблокировал tel: (WebView)
-    setTimeout(function () {
-      if (fallback) {
-        fallbackNumber.textContent = display;
-        fallback.classList.add('open');
+    if (!track || total === 0) return;
+
+    // Create dots
+    for (var i = 0; i < total; i++) {
+      var dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Фото ' + (i + 1));
+      (function (idx) {
+        dot.addEventListener('click', function () { goTo(idx); });
+      })(i);
+      dotsBox.appendChild(dot);
+    }
+
+    function updateDots() {
+      var dots = dotsBox.querySelectorAll('.carousel-dot');
+      for (var i = 0; i < dots.length; i++) {
+        dots[i].classList.toggle('active', i === current);
       }
-    }, 800);
-  }
+    }
 
-  document.querySelectorAll('.js-call').forEach(function (el) {
-    el.addEventListener('click', function (e) {
+    function goTo(index) {
+      if (index < 0) index = total - 1;
+      if (index >= total) index = 0;
+      current = index;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      updateDots();
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    nextBtn.addEventListener('click', next);
+    prevBtn.addEventListener('click', prev);
+
+    // Touch / swipe support
+    var startX = 0, startY = 0, isDragging = false, startTransform = 0;
+
+    track.addEventListener('touchstart', function (e) {
+      var touch = e.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+      isDragging = true;
+      startTransform = -current * 100;
+      track.style.transition = 'none';
+    }, { passive: true });
+
+    track.addEventListener('touchmove', function (e) {
+      if (!isDragging) return;
+      var touch = e.touches[0];
+      var dx = touch.clientX - startX;
+      var dy = touch.clientY - startY;
+      if (Math.abs(dy) > Math.abs(dx)) return; // vertical scroll
       e.preventDefault();
-      var phone = el.getAttribute('data-phone');
-      // Красивое отображение для fallback
-      var display = el.textContent.replace('📞', '').trim();
-      makeCall(phone, display);
-    });
-  });
+      var percent = dx / track.offsetWidth * 100;
+      track.style.transform = 'translateX(' + (startTransform + percent) + '%)';
+    }, { passive: false });
 
-  /* ============ ИГРЫ ============ */
+    track.addEventListener('touchend', function (e) {
+      if (!isDragging) return;
+      isDragging = false;
+      track.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      var touch = e.changedTouches[0];
+      var dx = touch.clientX - startX;
+      var threshold = track.offsetWidth * 0.15;
+      if (Math.abs(dx) > threshold) {
+        if (dx < 0) next(); else prev();
+      } else {
+        goTo(current);
+      }
+    });
+
+    // Keyboard arrows (optional)
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'ArrowRight') next();
+    });
+
+    // Auto-advance every 5 seconds
+    function startAuto() {
+      stopAuto();
+      autoTimer = setInterval(next, 5000);
+    }
+    function stopAuto() {
+      if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+    }
+    startAuto();
+
+    var carouselEl = document.getElementById('photoCarousel');
+    carouselEl.addEventListener('mouseenter', stopAuto);
+    carouselEl.addEventListener('mouseleave', startAuto);
+
+    // Pause when page is hidden
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stopAuto(); else startAuto();
+    });
+
+    // Initial state
+    track.style.transform = 'translateX(0%)';
+  })();
+
+  /* ============ ИГРЫ (ПРАВИЛА) ============ */
   var games = [
     { name: "Уно", meta: "2–10 игроков · 15 мин",
       body: "<p><b>Цель:</b> первым избавиться от всех карт на руке.</p><ul><li>Каждому раздают по 7 карт, верхняя карта колоды открывается.</li><li>Ходите картой того же цвета или того же числа/символа.</li><li>Нечем ходить — берите одну карту из колоды.</li><li>Спецкарты: «+2», «+4», «пропуск», «разворот», «смена цвета».</li><li>Кричите «Уно!», когда остаётся одна карта, иначе штраф.</li></ul>" },
 
     { name: "Суетолог", meta: "2–6 игроков · 20 мин",
-      body: "<p><b>Цель:</b> набрать больше всех очков, выполняя задания на скорость.</p><ul><li>Ведущий открывает карту с заданием.</li><li>Все одновременно выполняют его как можно быстрее.</li><li>Кто справился первым — забирает карту и очки.</li><li>Игра весёлая и шумная, отлично идёт под коктейли.</li></ul>" },
+      body: "<p><b>Цель:</b> стать самым богатым и влиятельным «темщиком» в городе.</p><ul><li>Каждый игрок получает стартовый капитал и выбирает персонажа.</li><li>Игроки по очереди бросают кубик и двигаются по игровому полю.</li><li>На клетках покупайте недвижимость («темки»), развивайте бизнес, нанимайте бандитов и конкурентов.</li><li>Избегайте попадания в руки правосудия — это может стоить ходов и денег.</li><li>Побеждает тот, кто к концу игры наберёт больше всего богатства и влияния.</li></ul>" },
 
     { name: "Монополия", meta: "2–6 игроков · 60+ мин",
-      body: "<p><b>Цель:</b> разорить соперников, скупая и развивая недвижимость.</p><ul><li>Бросайте кубики и двигайтесь по кругу.</li><li>Покупайте улицы, стройте дома и отели.</li><li>Попадая на чужую клетку — платите аренду.</li><li>Можно брать кредиты и обмениваться с игроками.</li><li>Побеждает последний не обанкротившийся.</li></ul>" },
+      body: "<p><b>Цель:</b> разорить соперников, скупая и развивая недвижимость. Побеждает последний не обанкротившийся игрок.</p><ul><li>Игроки поочерёдно кидают кубики и передвигают фишки по полю.</li><li>Попадая на свободный актив, вы можете его купить; на чужой — платите аренду.</li><li>На клетках событий выполняйте указания (налоги, штрафы, бонусы).</li><li>Стройте дома и отели, чтобы повышать аренду.</li><li>Можно брать кредиты и обмениваться активами с другими игроками.</li></ul>" },
 
     { name: "Нуар", meta: "2 игроков · 20 мин",
-      body: "<p><b>Цель:</b> вычислить убийцу раньше соперника.</p><ul><li>Один игрок — сыщик, другой — преступник (или оба угадывают).</li><li>Задавайте вопросы и сужайте круг подозреваемых.</li><li>У каждого персонажа есть свои свойства и алиби.</li><li>Кто первым назовёт верного убийцу — победил.</li></ul>" },
+      body: "<p><b>Цель:</b> вычислить убийцу раньше соперника (или убить достаточное количество жертв, если вы убийца).</p><ul><li>На столе выкладывается сетка 5×5 (или 6×6) из карт подозреваемых.</li><li>Один игрок тайно получает роль убийцы, другой — сыщика.</li><li>Убийца тайно передвигается и «убивает» персонажей, переворачивая их карты.</li><li>Сыщик допрашивает, обвиняет и пытается вычислить убийцу по показаниям.</li><li>Убийца побеждает, если убивает сыщика или нужное число жертв; сыщик — если называет убийцу.</li></ul>" },
 
     { name: "Манчкин", meta: "3–6 игроков · 60 мин",
-      body: "<p><b>Цель:</b> прокачаться до 10-го уровня раньше всех.</p><ul><li>Убивайте монстров, собирайте сокровища и снаряжение.</li><li>Можно подставлять друзей и мешать им в бою.</li><li>Победа над монстром даёт уровень и лут.</li><li>Кто первым дойдёт до 10-го уровня — победил.</li></ul>" },
+      body: "<p><b>Цель:</b> первым достичь 10-го уровня. Победный 10-й уровень можно получить только за победу над монстром.</p><ul><li>Каждый ход вы «вышибаете дверь»: открываете карту из колоды Дверей.</li><li>Если там монстр — сражаетесь; если проклятие — терпите эффект; если что-то другое — забираете в руку.</li><li>Победа над монстром даёт уровень и сокровища.</li><li>Можно усиливаться шмотками, зельями, классами и расами, а также мешать другим игрокам.</li><li>Ничто не может опустить ваш уровень ниже 1.</li></ul>" },
 
     { name: "Шахматы", meta: "2 игрока · 30–60 мин",
-      body: "<p><b>Цель:</b> поставить мат королю соперника.</p><ul><li>Ходы по очереди, у каждой фигуры своё движение.</li><li>Мат — король под атакой и некуда уйти.</li><li>Пат — ничья, если ходов нет, но шаха нет.</li><li>Можно играть с часами или без.</li></ul>" },
+      body: "<p><b>Цель:</b> поставить мат королю соперника — положение, при котором король под атакой и не имеет защиты.</p><ul><li>У каждого игрока 8 фигур (король, ферзь, две ладьи, два слона, два коня) и 8 пешек.</li><li>Фигуры ходят по-разному: пешка — на одну клетку вперёд (бьёт по диагонали), конь — буквой «Г», слон — по диагонали, ладья — по горизонтали/вертикали, ферзь — как ладья и слон, король — на одну клетку в любую сторону.</li><li>Шах — нападение на короля; мат — шах, от которого нет защиты; пат — ничья, если ходов нет, но шаха нет.</li><li>Если тронул фигуру — должен ею ходить (в серьёзных партиях).</li></ul>" },
 
     { name: "Нарды", meta: "2 игрока · 20–40 мин",
-      body: "<p><b>Цель:</b> первым вывести все шашки с доски.</p><ul><li>Бросайте кубики и двигайте шашки по направлению.</li><li>Шашка соперника на клетке — её можно «съесть».</li><li>Съеденная шашка возвращается в начало.</li><li>Выводите шашки из «дома» и побеждайте.</li></ul>" },
+      body: "<p><b>Цель:</b> первым привести все свои 15 фишек в «дом» и снять их с доски.</p><ul><li>Игра на доске с 24 игровыми пунктами; у каждого игрока по 15 шашек.</li><li>Игроки поочерёдно бросают две кости (зары) и передвигают шашки на выпавшее число очков.</li><li>Можно занимать свободные пункты; если на пункте стоит одна шашка соперника, её можно «съесть» (в коротких нардах).</li><li>С «головы» (начальной позиции) можно снимать только одну шашку за ход (кроме первого хода).</li><li>Когда все шашки в «доме», их начинают выносить за доску.</li></ul>" },
 
     { name: "Каркассон", meta: "2–5 игроков · 40 мин",
-      body: "<p><b>Цель:</b> набрать больше очков, выкладывая тайлы и занимая объекты.</p><ul><li>По очереди выкладывайте тайлы с дорогами, городами и полями.</li><li>Ставьте на них своих человечков (миплов).</li><li>Завершённые объекты приносят очки.</li><li>Считайте очки в конце — у кого больше, тот победил.</li></ul>" },
+      body: "<p><b>Цель:</b> набрать больше всех победных очков к концу игры, выкладывая тайлы и занимая объекты.</p><ul><li>Игроки по очереди берут тайл с ландшафтом (дорога, город, поле, монастырь) и выкладывают его к уже выложенным по принципу домино: дорога к дороге, стена к стене и т.д.</li><li>На выложенный тайл можно поставить своего человечка (мипла), чтобы занять дорогу, город, поле или монастырь.</li><li>Завершённые объекты приносят очки: дорога — 1 очко за тайл, город — 2 очка за тайл, монастырь — 1 очко за сам монастырь и по 1 за каждый окружающий тайл.</li><li>В конце игры проводится финальный подсчёт, включая незавершённые объекты.</li></ul>" },
 
     { name: "Мафия", meta: "6–16 игроков · 30 мин",
-      body: "<p><b>Цель:</b> мирные жители ловят мафию, мафия уничтожает город.</p><ul><li>Ведущий раздаёт роли: мафия, мирные, комиссар, доктор и др.</li><li>Ночью мафия «убивает», город спит.</li><li>Днём все обсуждают и голосуют, кого казнить.</li><li>Город побеждает, когда поймана вся мафия; мафия — когда её больше.</li></ul>" },
+      body: "<p><b>Цель:</b> мирные жители должны вычислить и казнить всю мафию; мафия должна уничтожить мирных жителей.</p><ul><li>Ведущий раздаёт роли: мафия, мирные жители, комиссар, доктор и др.</li><li>Ночью все закрывают глаза; мафия просыпается, запоминает своих и выбирает жертву; комиссар проверяет игрока; доктор лечит.</li><li>Днём все обсуждают убийство и голосуют, кого казнить.</li><li>Игра делится на два этапа: день и ночь, и продолжается до победы одной из сторон.</li></ul>" },
 
     { name: "Словодел", meta: "2–4 игрока · 30 мин",
-      body: "<p><b>Цель:</b> набрать больше очков, составляя слова на поле.</p><ul><li>Выкладывайте буквы в слова, как в «Эрудите».</li><li>Слова должны пересекаться с уже выложенными.</li><li>За буквы и клетки-бонусы начисляются очки.</li><li>У кого больше очков в конце — победил.</li></ul>" },
+      body: "<p><b>Цель:</b> набрать больше всех очков, составляя слова на поле из букв.</p><ul><li>Каждый игрок берёт 7 фишек с буквами; фишки перемешиваются буквами вниз.</li><li>Первое слово должно пересекать две коричневые клетки в центре поля.</li><li>Слова составляются горизонтально или вертикально и должны пересекаться с уже выложенными.</li><li>За использование всех 7 фишек за один ход начисляется премия в 25 очков.</li><li>Игра продолжается, пока не выложены все буквы или пока можно составлять слова.</li></ul>" },
 
     { name: "Дженга", meta: "2+ игроков · 15 мин",
-      body: "<p><b>Цель:</b> не обрушить башню.</p><ul><li>По очереди вытаскивайте по одному бруску из башни.</li><li>Вытащенный брусок кладите наверх.</li><li>Кто обрушил башню — проиграл.</li><li>Идеально для весёлой компании.</li></ul>" },
+      body: "<p><b>Цель:</b> не обрушить башню. Проигрывает тот, кто её разрушил.</p><ul><li>Башня строится из 54 блоков высотой в 18 этажей: каждый этаж — 3 блока, уложенных перпендикулярно предыдущему.</li><li>Игроки по очереди вытаскивают по одному блоку из любого уровня, кроме верхних трёх, и кладут его наверх.</li><li>Использовать можно только одну руку.</li><li>Ход заканчивается, когда следующий игрок дотронется до башни или пройдёт 10 секунд.</li><li>Побеждает последний игрок, который успешно переложил блок.</li></ul>" },
 
     { name: "Спящие королевы", meta: "2–5 игроков · 20 мин",
-      body: "<p><b>Цель:</b> собрать больше всех королев.</p><ul><li>Открывайте карты и «будите» королев.</li><li>Королевы дают очки, но есть и коварные карты.</li><li>Собирайте наборы и избегайте ловушек.</li><li>У кого больше очков — победил.</li></ul>" },
+      body: "<p><b>Цель:</b> разбудить больше всех королев или первым набрать нужное количество очков.</p><ul><li>12 карт королев перемешиваются и кладутся в центре рубашкой вверх.</li><li>В свой ход можно сыграть одну карту: Короля (разбудить королеву), Рыцаря (украсть королеву у соперника), Дракона (защитить свою королеву от Рыцаря) и т.д.</li><li>Королевы приносят победные очки; у каждой королевы своя ценность.</li><li>Победа: для 2–3 игроков — 5 королев или 50 очков; для 4–5 игроков — 4 королевы или 40 очков.</li></ul>" },
 
     { name: "Иманджинариум", meta: "3–8 игроков · 30 мин",
-      body: "<p><b>Цель:</b> набрать очки, угадывая ассоциации по картинкам.</p><ul><li>Ведущий загадывает ассоциацию к своей карте.</li><li>Все сдают свои карты под эту ассоциацию.</li><li>Игроки угадывают карту ведущего.</li><li>Очки за верные угадывания и за то, что вашу карту выбрали.</li></ul>" },
+      body: "<p><b>Цель:</b> набрать больше всех очков, угадывая ассоциации по картинкам.</p><ul><li>Каждый ход один игрок становится ведущим. Он выбирает свою карту, кладёт её рубашкой вверх и называет ассоциацию.</li><li>Остальные игроки выбирают из своих рук карту, которая лучше всего подходит под эту ассоциацию, и сдают её ведущему.</li><li>Ведущий перемешивает все сданные карты и выкладывает их в ряд.</li><li>Игроки голосуют за карту, которая, по их мнению, принадлежит ведущему.</li><li>Очки получают ведущий (если его карту угадали), игроки за верные угадывания и за то, что их карту выбрали.</li></ul>" },
 
     { name: "Подбери мем", meta: "3–8 игроков · 20 мин",
-      body: "<p><b>Цель:</b> подобрать самый смешной мем под ситуацию.</p><ul><li>Ведущий читает ситуацию.</li><li>Все выбирают подходящий мем из руки.</li><li>Ведущий выбирает лучший — автор получает очко.</li><li>Кто наберёт больше очков — победил.</li></ul>" },
+      body: "<p><b>Цель:</b> подобрать самый смешной мем под ситуацию.</p><ul><li>Каждый игрок получает карты с мемами (обычно по 3–6 штук).</li><li>Ведущий читает ситуацию с карточки.</li><li>Все игроки выбирают из своих рук мем, который лучше всего описывает эту ситуацию, и кладут его на стол.</li><li>Ведущий выбирает самый смешной мем; автор получает очко.</li><li>Побеждает тот, кто наберёт больше всех очков («Король мемов»).</li></ul>" },
 
     { name: "Свинтус", meta: "2–8 игроков · 15 мин",
-      body: "<p><b>Цель:</b> первым избавиться от всех карт.</p><ul><li>Ходите картой того же цвета или символа.</li><li>Есть спецкарты-«свинтусы» с особыми эффектами.</li><li>Нечем ходить — берите из колоды.</li><li>Кто первым сбросил все карты — победил.</li></ul>" },
+      body: "<p><b>Цель:</b> первым избавиться от всех карт на руке.</p><ul><li>Каждый игрок получает 8 карт; верхняя карта колоды открывается и кладётся в игровую стопку.</li><li>В свой ход выкладывайте карту, совпадающую с верхней картой стопки по цвету или по достоинству.</li><li>Спецкарты («Хапёж», «Перевод» и др.) меняют ход игры; «Перевод» позволяет перевести вредную карту на другого игрока.</li><li>Когда игрок разыгрывает предпоследнюю карту, он должен крикнуть «Свинтус!».</li><li>Раунд выигрывает тот, кто первым сбросил все карты; партия идёт до определённого количества очков (например, 30).</li></ul>" },
 
     { name: "Крокодил", meta: "4–16 игроков · 20 мин",
-      body: "<p><b>Цель:</b> объяснить слово команде без слов.</p><ul><li>Ведущий показывает слово жестами или рисунком.</li><li>Команда угадывает за отведённое время.</li><li>За угаданные слова — очки.</li><li>Игра на скорость и фантазию.</li></ul>" },
+      body: "<p><b>Цель:</b> объяснить слово команде без слов (жестами, мимикой) или рисунком, в зависимости от варианта.</p><ul><li>Игроки делятся на команды или играют друг против друга.</li><li>Ведущий берёт карту со словами, выбирает одно слово и показывает его своей команде.</li><li>Запрещено произносить звуки, писать или показывать буквы.</li><li>Команда угадывает слово за отведённое время; за каждое угаданное слово — очко.</li><li>Ход переходит к следующей команде; побеждает команда с большим количеством очков.</li></ul>" },
 
     { name: "Нечто", meta: "4–8 игроков · 30 мин",
-      body: "<p><b>Цель:</b> вычислить, кто из игроков «нечто» (заражённый).</p><ul><li>Роли раздаются скрыто.</li><li>«Нечто» заражает и обманывает команду.</li><li>Команда обсуждает и голосует.</li><li>Побеждает сторона, достигшая своей цели.</li></ul>" },
+      body: "<p><b>Цель:</b> люди должны сбежать со станции и не дать пришельцу заразить всех; пришелец должен заразить всех или сбежать вместе с людьми.</p><ul><li>В начале игры роли распределяются скрыто: один игрок — Нечто (пришелец), остальные — люди.</li><li>В свой ход игрок выполняет три действия: берёт карту из колоды, разыгрывает/сбрасывает карту события, меняется картой с игроком по направлению хода.</li><li>Пришелец передаёт карты заражения; люди пытаются вычислить его и сжечь огнемётом.</li><li>Побеждают люди, если им удаётся сбежать без заражения; пришелец побеждает, если заражает всех или спасается вместе с ними.</li></ul>" },
 
     { name: "Мемо", meta: "2–6 игроков · 15 мин",
-      body: "<p><b>Цель:</b> собрать больше пар карт.</p><ul><li>Карты выкладываются рубашкой вверх.</li><li>Открывайте по две карты за ход.</li><li>Совпала пара — забираете её и ходите снова.</li><li>У кого больше пар — победил.</li></ul>" },
+      body: "<p><b>Цель:</b> собрать больше всех парных карточек.</p><ul><li>Карточки перемешиваются и раскладываются на столе картинками вниз.</li><li>Игроки по очереди переворачивают по две карточки так, чтобы все видели изображения.</li><li>Если картинки совпали, игрок забирает пару и делает ещё один ход.</li><li>Если разные — карточки переворачиваются обратно, ход переходит к следующему.</li><li>Побеждает тот, кто к концу игры соберёт больше всего карточек.</li></ul>" },
 
     { name: "Эрудит", meta: "2–4 игрока · 30–60 мин",
-      body: "<p><b>Цель:</b> набрать больше очков за слова.</p><ul><li>Составляйте слова из букв на поле.</li><li>Слова пересекаются с уже выложенными.</li><li>Клетки-бонусы умножают очки.</li><li>У кого больше очков — победил.</li></ul>" },
+      body: "<p><b>Цель:</b> набрать больше всех очков, составляя слова на поле из букв.</p><ul><li>Каждый игрок получает 7 случайных букв (всего в колоде около 100+ фишек).</li><li>Первое слово должно проходить через центральную клетку.</li><li>Слова выкладываются горизонтально или вертикально, как в кроссворде; каждое новое слово должно использовать хотя бы одну букву, уже находящуюся на поле.</li><li>У букв разная ценность; клетки-бонусы умножают очки.</li><li>За использование всех 7 букв за один ход начисляется бонус.</li><li>Игра заканчивается, когда один из игроков набирает условный счёт или заканчиваются фишки.</li></ul>" },
 
     { name: "Ёрш", meta: "2–6 игроков · 15 мин",
-      body: "<p><b>Цель:</b> быстрее всех избавиться от карт.</p><ul><li>Ходите картой по цвету или символу.</li><li>Спецкарты меняют правила хода.</li><li>Нечем ходить — берите из колоды.</li><li>Кто первым сбросил карты — победил.</li></ul>" },
+      body: "<p><b>Цель:</b> набрать больше всех «очков трезвости», выполняя задания.</p><ul><li>Игроки по очереди берут карту задания и решают, выполнять его или нет.</li><li>Выполнив задание, игрок берёт карту бонуса и получает очки трезвости.</li><li>При отказе игрок получает штрафную (обычно — выпивка), а его сосед справа — то же задание.</li><li>В колоде есть карты с медведями; когда у игрока накапливается 3 карты медведя, игра приближается к концу.</li><li>Побеждает тот, кто наберёт наибольшее количество очков трезвости.</li></ul>" },
 
-    { name: "Кто ты что ты", meta: "4–12 игроков · 30 мин",
-      body: "<p><b>Цель:</b> угадать, кто вы, задавая вопросы.</p><ul><li>Каждый получает скрытую карточку с персонажем.</li><li>Задавайте вопросы другим и отвечайте «да/нет».</li><li>Угадайте своего персонажа раньше остальных.</li><li>Кто угадал больше — победил.</li></ul>" }
+    { name: "Кто ты? Что ты?", meta: "4–12 игроков · 30 мин",
+      body: "<p><b>Цель:</b> с помощью наводящих вопросов отгадать, какой вы персонаж или предмет.</p><ul><li>Каждый игрок надевает на голову обруч и, не глядя, вставляет в прорезь карточку с изображением.</li><li>Игроки по очереди задают вопросы другим игрокам, стараясь определить свою роль.</li><li>Отвечать можно только «Да» или «Нет».</li><li>Тот, кто первым правильно назовёт, кто он, побеждает.</li></ul>" }
   ];
 
   /* ============ ОТРИСОВКА ИГР ============ */
@@ -877,6 +1255,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var sections = page.querySelectorAll('.section');
     tabs.forEach(function (t, i) { t.classList.toggle('active', i === 0); });
     sections.forEach(function (s, i) { s.classList.toggle('active', i === 0); });
+    if (page._resetNav) page._resetNav();
   }
 
   document.getElementById('openMenu').addEventListener('click', function (e) {
@@ -914,6 +1293,68 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
+
+  /* ============ СТРЕЛКИ КАТЕГОРИЙ ============ */
+  function setupNavArrows(page) {
+    var nav = page.querySelector('nav');
+    if (!nav) return;
+    var prevBtn = page.querySelector('.nav-prev');
+    var nextBtn = page.querySelector('.nav-next');
+    if (!prevBtn || !nextBtn) return;
+
+    var tabs = Array.prototype.slice.call(nav.querySelectorAll('.tab'));
+
+    function currentIndex() {
+      for (var i = 0; i < tabs.length; i++) {
+        if (tabs[i].classList.contains('active')) return i;
+      }
+      return 0;
+    }
+
+    function syncArrows() {
+      var i = currentIndex();
+      prevBtn.disabled = i <= 0;
+      nextBtn.disabled = i >= tabs.length - 1;
+    }
+
+    function scrollTabIntoView(tab) {
+      var navRect = nav.getBoundingClientRect();
+      var tabRect = tab.getBoundingClientRect();
+      var pad = 8;
+      if (tabRect.left < navRect.left + pad) {
+        nav.scrollBy({ left: tabRect.left - navRect.left - pad, behavior: 'smooth' });
+      } else if (tabRect.right > navRect.right - pad) {
+        nav.scrollBy({ left: tabRect.right - navRect.right + pad, behavior: 'smooth' });
+      }
+    }
+
+    function goTo(i) {
+      if (i < 0 || i >= tabs.length) return;
+      tabs[i].click();
+      scrollTabIntoView(tabs[i]);
+      syncArrows();
+    }
+
+    prevBtn.addEventListener('click', function () { goTo(currentIndex() - 1); });
+    nextBtn.addEventListener('click', function () { goTo(currentIndex() + 1); });
+
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () {
+        scrollTabIntoView(t);
+        syncArrows();
+      });
+    });
+
+    page._resetNav = function () {
+      nav.scrollTo({ left: 0, behavior: 'auto' });
+      syncArrows();
+    };
+
+    syncArrows();
+  }
+
+  setupNavArrows(menuPage);
+  setupNavArrows(barPage);
 
 });
 </script>
