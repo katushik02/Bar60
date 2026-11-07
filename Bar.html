@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -242,31 +242,30 @@
   .note { font-size: 11px; color: var(--accent); margin: 0 0 10px; letter-spacing: .02em; font-weight: 600; text-transform: uppercase; }
   .subhead { font-family: "Playfair Display", "Georgia", serif; font-size: 16px; font-weight: 600; color: var(--accent-soft); margin: 16px 0 10px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
 
-  /* ===== СТРУКТУРА ДЛЯ ЦЕН И ГРАММОВОК ===== */
   .item {
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     gap: 12px;
-    padding: 10px 14px; 
-    margin-bottom: 6px; 
+    padding: 10px 14px;
+    margin-bottom: 6px;
     border-radius: 12px;
     background: linear-gradient(160deg, var(--card2), var(--card));
     border: 1px solid var(--border);
   }
-  .item .name { 
-    flex: 1; 
-    font-size: 13px; 
-    font-weight: 500; 
-    line-height: 1.3; 
+  .item .name {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
   }
-  .item .price-col { 
+  .item .price-col {
     flex: 0 0 80px;
-    display: flex; 
-    justify-content: space-between; 
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    font-family: "Montserrat", sans-serif; 
-    color: var(--gold); 
-    font-size: 14px; 
+    font-family: "Montserrat", sans-serif;
+    color: var(--gold);
+    font-size: 14px;
     font-weight: 600;
     white-space: nowrap;
   }
@@ -289,7 +288,6 @@
     color: var(--accent-text); border-color: var(--accent); background: var(--accent);
   }
 
-  /* ===== Острота: 3 перчика ===== */
   .spice {
     display: inline-flex;
     align-items: center;
@@ -312,7 +310,6 @@
     filter: none;
   }
 
-  /* Соусы */
   .sauce-list {
     display: flex; flex-wrap: wrap; gap: 6px;
     margin: 0 0 10px;
@@ -324,7 +321,6 @@
     color: var(--text); white-space: nowrap;
   }
 
-  /* Паста-герой */
   .pasta-hero {
     text-align: center;
     font-family: "Playfair Display", "Georgia", serif;
@@ -422,7 +418,7 @@
     .carousel-arrow { opacity: 0.7; }
   }
 
-  /* ===== БЛОК БРОНИРОВАНИЯ (внизу) ===== */
+  /* ===== БЛОК БРОНИРОВАНИЯ ===== */
   .booking-section {
     background: linear-gradient(160deg, var(--card2), var(--card));
     border: 1px solid var(--border);
@@ -507,6 +503,7 @@
   </div>
 
   <!-- ФОТО-КАРУСЕЛЬ -->
+  <!-- Замените src у каждого img на путь к вашему файлу, например: images/photo1.jpg -->
   <div class="photo-carousel" id="photoCarousel">
     <div class="carousel-track" id="carouselTrack">
       <div class="carousel-slide">
@@ -536,8 +533,10 @@
   </div>
 
   <div class="intro-card">
-    <h2>О баре</h2>
-    <p>«Гастробар 60» — это идеальный сценарий для вечера, который не хочется прерывать. Гастрономия, авторские коктейли и настолки в одном пространстве.</p>
+    <h2>История «60»</h2>
+    <p>«Гастробар 60» открылся в 2009 году на пешеходной Баумана — тогда это было небольшое кафе с кофе и десертами на несколько столиков. Со временем кухня выросла, появился полноценный бар, а в 2016-м заведение пережило первое большое обновление: именно тогда сложился формат гастробара с акцентом на локальные продукты и авторские коктейли.</p>
+
+    <p>Сегодня «60» — это место, где соседствуют татарская классика и современная гастрономия: кыстыбый и бешбармак здесь подают по соседству с том-ямом и стейками, а бармены экспериментируют с настойками и сезонными коктейлями. На полках — десятки настольных игр, которые можно взять за столик.</p>
 
     <div class="feature">
       <div class="icon">🎲</div>
@@ -580,7 +579,7 @@
     <a href="#" class="btn btn-bar" id="openBar">🍸 Карта бара</a>
   </div>
 
-  <!-- ===== БРОНИРОВАНИЕ (в самом низу главной, после меню и бара) ===== -->
+  <!-- БРОНИРОВАНИЕ (внизу главной) -->
   <div class="booking-section" id="bookingSection">
     <h2>Забронировать столик</h2>
     <p class="booking-sub">Для свидания, встречи с друзьями или дня рождения. Скажите, что нужна настолка — подготовим.</p>
@@ -615,10 +614,10 @@
     <button type="button" class="nav-arrow nav-prev" aria-label="Предыдущая категория">‹</button>
 
     <nav id="menuNav">
-      <button class="tab active" data-tab="m-zakuski">Закуски</button>
+      <button class="tab active" data-tab="m-nac">Национальные</button>
+      <button class="tab" data-tab="m-zakuski">Закуски</button>
       <button class="tab" data-tab="m-salaty">Салаты</button>
       <button class="tab" data-tab="m-supy">Супы</button>
-      <button class="tab" data-tab="m-nac">Национальные</button>
       <button class="tab" data-tab="m-pasta">Паста собери сам</button>
       <button class="tab" data-tab="m-vtorye">Вторые блюда</button>
       <button class="tab" data-tab="m-stejki">Стейки</button>
@@ -630,8 +629,20 @@
     <button type="button" class="nav-arrow nav-next" aria-label="Следующая категория">›</button>
   </div>
 
+  <!-- НАЦИОНАЛЬНЫЕ (первая, активная) -->
+  <section class="section active" id="m-nac">
+    <div class="item"><div class="name">Кыстыбый с картофелем</div><div class="price-col"><span class="weight">220г</span><span class="price">330 ₽</span></div></div>
+    <div class="item"><div class="name">Кыстыбый с уткой <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">200г</span><span class="price">550 ₽</span></div></div>
+    <div class="item"><div class="name">Кыстыбый с форелью</div><div class="price-col"><span class="weight">200г</span><span class="price">650 ₽</span></div></div>
+    <div class="item"><div class="name">Салат с кониной</div><div class="price-col"><span class="weight">220г</span><span class="price">590 ₽</span></div></div>
+    <div class="item"><div class="name">Бешбармак с кониной</div><div class="price-col"><span class="weight">370г</span><span class="price">750 ₽</span></div></div>
+    <div class="item"><div class="name">Токмач</div><div class="price-col"><span class="weight">340г</span><span class="price">490 ₽</span></div></div>
+    <div class="item"><div class="name">Суп-гуляш с кониной</div><div class="price-col"><span class="weight">250г</span><span class="price">680 ₽</span></div></div>
+    <div class="item"><div class="name">Азу с картофельным пюре</div><div class="price-col"><span class="weight">380г</span><span class="price">750 ₽</span></div></div>
+  </section>
+
   <!-- ЗАКУСКИ -->
-  <section class="section active" id="m-zakuski">
+  <section class="section" id="m-zakuski">
     <div class="note">Соус на выбор* — к блюдам, где указано</div>
 
     <div class="item"><div class="name">Луковые кольца. Соус на выбор*</div><div class="price-col"><span class="weight">100г</span><span class="price">370 ₽</span></div></div>
@@ -675,18 +686,6 @@
     <div class="item"><div class="name">Том ям с курицей <span class="spice"><span class="p on">🌶</span><span class="p on">🌶</span><span class="p">🌶</span></span></div><div class="price-col"><span class="weight">350г</span><span class="price">520 ₽</span></div></div>
     <div class="item"><div class="name">Сырный суп</div><div class="price-col"><span class="weight">250г</span><span class="price">600 ₽</span></div></div>
     <div class="item"><div class="name">Уха сливочная с лососем</div><div class="price-col"><span class="weight">300г</span><span class="price">650 ₽</span></div></div>
-  </section>
-
-  <!-- НАЦИОНАЛЬНЫЕ -->
-  <section class="section" id="m-nac">
-    <div class="item"><div class="name">Кыстыбый с картофелем</div><div class="price-col"><span class="weight">220г</span><span class="price">330 ₽</span></div></div>
-    <div class="item"><div class="name">Кыстыбый с уткой <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">200г</span><span class="price">550 ₽</span></div></div>
-    <div class="item"><div class="name">Кыстыбый с форелью</div><div class="price-col"><span class="weight">200г</span><span class="price">650 ₽</span></div></div>
-    <div class="item"><div class="name">Салат с кониной</div><div class="price-col"><span class="weight">220г</span><span class="price">590 ₽</span></div></div>
-    <div class="item"><div class="name">Бешбармак с кониной</div><div class="price-col"><span class="weight">370г</span><span class="price">750 ₽</span></div></div>
-    <div class="item"><div class="name">Токмач</div><div class="price-col"><span class="weight">340г</span><span class="price">490 ₽</span></div></div>
-    <div class="item"><div class="name">Суп-гуляш с кониной</div><div class="price-col"><span class="weight">250г</span><span class="price">680 ₽</span></div></div>
-    <div class="item"><div class="name">Азу с картофельным пюре</div><div class="price-col"><span class="weight">380г</span><span class="price">750 ₽</span></div></div>
   </section>
 
   <!-- ПАСТА СОБЕРИ САМ -->
@@ -768,7 +767,8 @@
     <button type="button" class="nav-arrow nav-prev" aria-label="Предыдущая категория">‹</button>
 
     <nav id="barNav">
-      <button class="tab active" data-tab="b-smuzi">Смузи</button>
+      <button class="tab active" data-tab="b-avtorskie">Авторские коктейли</button>
+      <button class="tab" data-tab="b-smuzi">Смузи</button>
       <button class="tab" data-tab="b-soki">Соки</button>
       <button class="tab" data-tab="b-milkshake">Молочные коктейли</button>
       <button class="tab" data-tab="b-napitki">Напитки</button>
@@ -790,7 +790,6 @@
       <button class="tab" data-tab="b-pivo-but">Пиво бутылочное</button>
       <button class="tab" data-tab="b-vino">Винная карта</button>
       <button class="tab" data-tab="b-glintvejn">Глинтвейн</button>
-      <button class="tab" data-tab="b-avtorskie">Авторские коктейли</button>
       <button class="tab" data-tab="b-klassika">Классические коктейли</button>
       <button class="tab" data-tab="b-shoty">Шоты</button>
     </nav>
@@ -798,7 +797,27 @@
     <button type="button" class="nav-arrow nav-next" aria-label="Следующая категория">›</button>
   </div>
 
-  <section class="section active" id="b-smuzi">
+  <!-- АВТОРСКИЕ КОКТЕЙЛИ (первая, активная) -->
+  <section class="section active" id="b-avtorskie">
+    <div class="note">Все авторские коктейли по акции 1+1 за 756 ₽</div>
+    <div class="item"><div class="name">Тихий час <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">170 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Скуф</div><div class="price-col"><span class="weight">100 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Чилл на пляже</div><div class="price-col"><span class="weight">230 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Зелёнка</div><div class="price-col"><span class="weight">180 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Краш</div><div class="price-col"><span class="weight">180 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">+Вайб</div><div class="price-col"><span class="weight">180 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Агава-фреш</div><div class="price-col"><span class="weight">100 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Имба</div><div class="price-col"><span class="weight">120 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">База</div><div class="price-col"><span class="weight">130 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Солнце Монако</div><div class="price-col"><span class="weight">190 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Барби</div><div class="price-col"><span class="weight">110 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Экспонат <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">150 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Альтушка</div><div class="price-col"><span class="weight">120 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Ред флаг</div><div class="price-col"><span class="weight">145 мл</span><span class="price">756 ₽</span></div></div>
+    <div class="item"><div class="name">Олигарх</div><div class="price-col"><span class="weight">110 мл</span><span class="price">756 ₽</span></div></div>
+  </section>
+
+  <section class="section" id="b-smuzi">
     <div class="item"><div class="name">Облепиховый</div><div class="price-col"><span class="weight">0.3 л</span><span class="price">450 ₽</span></div></div>
     <div class="item"><div class="name">Банан-черная смородина</div><div class="price-col"><span class="weight">0.3 л</span><span class="price">450 ₽</span></div></div>
   </section>
@@ -959,25 +978,6 @@
     <div class="item"><div class="name">Вишневый сбитень</div><div class="price-col"><span class="weight">220 мл</span><span class="price">546 ₽</span></div></div>
   </section>
 
-  <section class="section" id="b-avtorskie">
-    <div class="note">Все авторские коктейли по акции 1+1 за 756 ₽</div>
-    <div class="item"><div class="name">Тихий час <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">170 мл</span><span class="price">756 ₽</span></div></div>
-    <div class="item"><div class="name">Скуф</div><div class="price-col"><span class="weight">100 мл</span><span class="price">756 ₽</span></div></div>
-    <div class="item"><div class="name">Чилл на пляже</div><div class="price-col"><span class="weight">230 мл</span><span class="price">756 ₽</span></div></div>
-    <div class="item"><div class="name">Зелёнка</div><div class="price-col"><span class="weight">180 мл</span><span class="price">756 ₽</span></div></div>
-    <div class="item"><div class="name">Краш</div><div class="price-col"><span class="weight">180 мл</span><span class="price">756 ₽</span></div></div>
-    <div class="item"><div class="name">+Вайб</div><div class="price-col"><span class="weight">180 мл</span><span class="price">756 ₽</span></div></div>
-    <div class="item"><div class="name">Агава-фреш</div><div class="price-col"><span class="weight">100 мл</span><span class="price">756 ₽</span></div></div>
-    <div class="item"><div class="name">Имба</div><div class="price-col"><span class="weight">120 мл</span><span class="price">756 ₽</span></div></div>
-    <div class="item"><div class="name">База</div><div class="price-col"><span class="weight">130 мл</span><span class="price">756 ₽</span></div></div>
-    <div class="item"><div class="name">Солнце Монако</div><div class="price-col"><span class="weight">190 мл</span><span class="price">756 ₽</span></div></div>
-    <div class="item"><div class="name">Барби</div><div class="price-col"><span class="weight">110 мл</span><span class="price">756 ₽</span></div></div>
-    <div class="item"><div class="name">Экспонат <span class="badge promo">ХИТ ПРОДАЖ</span></div><div class="price-col"><span class="weight">150 мл</span><span class="price">756 ₽</span></div></div>
-    <div class="item"><div class="name">Альтушка</div><div class="price-col"><span class="weight">120 мл</span><span class="price">756 ₽</span></div></div>
-    <div class="item"><div class="name">Ред флаг</div><div class="price-col"><span class="weight">145 мл</span><span class="price">756 ₽</span></div></div>
-    <div class="item"><div class="name">Олигарх</div><div class="price-col"><span class="weight">110 мл</span><span class="price">756 ₽</span></div></div>
-  </section>
-
   <section class="section" id="b-klassika">
     <div class="item"><div class="name">Белый русский</div><div class="price-col"><span class="weight">100 мл</span><span class="price">556 ₽</span></div></div>
     <div class="item"><div class="name">Маргарита</div><div class="price-col"><span class="weight">110 мл</span><span class="price">556 ₽</span></div></div>
@@ -1046,7 +1046,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!track || total === 0) return;
 
-    // Create dots
     for (var i = 0; i < total; i++) {
       var dot = document.createElement('button');
       dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
@@ -1078,7 +1077,6 @@ document.addEventListener('DOMContentLoaded', function () {
     nextBtn.addEventListener('click', next);
     prevBtn.addEventListener('click', prev);
 
-    // Touch / swipe support
     var startX = 0, startY = 0, isDragging = false, startTransform = 0;
 
     track.addEventListener('touchstart', function (e) {
@@ -1095,7 +1093,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var touch = e.touches[0];
       var dx = touch.clientX - startX;
       var dy = touch.clientY - startY;
-      if (Math.abs(dy) > Math.abs(dx)) return; // vertical scroll
+      if (Math.abs(dy) > Math.abs(dx)) return;
       e.preventDefault();
       var percent = dx / track.offsetWidth * 100;
       track.style.transform = 'translateX(' + (startTransform + percent) + '%)';
@@ -1115,13 +1113,11 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Keyboard arrows (optional)
     document.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowLeft') prev();
       if (e.key === 'ArrowRight') next();
     });
 
-    // Auto-advance every 5 seconds
     function startAuto() {
       stopAuto();
       autoTimer = setInterval(next, 5000);
@@ -1135,12 +1131,10 @@ document.addEventListener('DOMContentLoaded', function () {
     carouselEl.addEventListener('mouseenter', stopAuto);
     carouselEl.addEventListener('mouseleave', startAuto);
 
-    // Pause when page is hidden
     document.addEventListener('visibilitychange', function () {
       if (document.hidden) stopAuto(); else startAuto();
     });
 
-    // Initial state
     track.style.transform = 'translateX(0%)';
   })();
 
@@ -1148,69 +1142,48 @@ document.addEventListener('DOMContentLoaded', function () {
   var games = [
     { name: "Уно", meta: "2–10 игроков · 15 мин",
       body: "<p><b>Цель:</b> первым избавиться от всех карт на руке.</p><ul><li>Каждому раздают по 7 карт, верхняя карта колоды открывается.</li><li>Ходите картой того же цвета или того же числа/символа.</li><li>Нечем ходить — берите одну карту из колоды.</li><li>Спецкарты: «+2», «+4», «пропуск», «разворот», «смена цвета».</li><li>Кричите «Уно!», когда остаётся одна карта, иначе штраф.</li></ul>" },
-
     { name: "Суетолог", meta: "2–6 игроков · 20 мин",
       body: "<p><b>Цель:</b> стать самым богатым и влиятельным «темщиком» в городе.</p><ul><li>Каждый игрок получает стартовый капитал и выбирает персонажа.</li><li>Игроки по очереди бросают кубик и двигаются по игровому полю.</li><li>На клетках покупайте недвижимость («темки»), развивайте бизнес, нанимайте бандитов и конкурентов.</li><li>Избегайте попадания в руки правосудия — это может стоить ходов и денег.</li><li>Побеждает тот, кто к концу игры наберёт больше всего богатства и влияния.</li></ul>" },
-
     { name: "Монополия", meta: "2–6 игроков · 60+ мин",
       body: "<p><b>Цель:</b> разорить соперников, скупая и развивая недвижимость. Побеждает последний не обанкротившийся игрок.</p><ul><li>Игроки поочерёдно кидают кубики и передвигают фишки по полю.</li><li>Попадая на свободный актив, вы можете его купить; на чужой — платите аренду.</li><li>На клетках событий выполняйте указания (налоги, штрафы, бонусы).</li><li>Стройте дома и отели, чтобы повышать аренду.</li><li>Можно брать кредиты и обмениваться активами с другими игроками.</li></ul>" },
-
     { name: "Нуар", meta: "2 игроков · 20 мин",
       body: "<p><b>Цель:</b> вычислить убийцу раньше соперника (или убить достаточное количество жертв, если вы убийца).</p><ul><li>На столе выкладывается сетка 5×5 (или 6×6) из карт подозреваемых.</li><li>Один игрок тайно получает роль убийцы, другой — сыщика.</li><li>Убийца тайно передвигается и «убивает» персонажей, переворачивая их карты.</li><li>Сыщик допрашивает, обвиняет и пытается вычислить убийцу по показаниям.</li><li>Убийца побеждает, если убивает сыщика или нужное число жертв; сыщик — если называет убийцу.</li></ul>" },
-
     { name: "Манчкин", meta: "3–6 игроков · 60 мин",
       body: "<p><b>Цель:</b> первым достичь 10-го уровня. Победный 10-й уровень можно получить только за победу над монстром.</p><ul><li>Каждый ход вы «вышибаете дверь»: открываете карту из колоды Дверей.</li><li>Если там монстр — сражаетесь; если проклятие — терпите эффект; если что-то другое — забираете в руку.</li><li>Победа над монстром даёт уровень и сокровища.</li><li>Можно усиливаться шмотками, зельями, классами и расами, а также мешать другим игрокам.</li><li>Ничто не может опустить ваш уровень ниже 1.</li></ul>" },
-
     { name: "Шахматы", meta: "2 игрока · 30–60 мин",
       body: "<p><b>Цель:</b> поставить мат королю соперника — положение, при котором король под атакой и не имеет защиты.</p><ul><li>У каждого игрока 8 фигур (король, ферзь, две ладьи, два слона, два коня) и 8 пешек.</li><li>Фигуры ходят по-разному: пешка — на одну клетку вперёд (бьёт по диагонали), конь — буквой «Г», слон — по диагонали, ладья — по горизонтали/вертикали, ферзь — как ладья и слон, король — на одну клетку в любую сторону.</li><li>Шах — нападение на короля; мат — шах, от которого нет защиты; пат — ничья, если ходов нет, но шаха нет.</li><li>Если тронул фигуру — должен ею ходить (в серьёзных партиях).</li></ul>" },
-
     { name: "Нарды", meta: "2 игрока · 20–40 мин",
       body: "<p><b>Цель:</b> первым привести все свои 15 фишек в «дом» и снять их с доски.</p><ul><li>Игра на доске с 24 игровыми пунктами; у каждого игрока по 15 шашек.</li><li>Игроки поочерёдно бросают две кости (зары) и передвигают шашки на выпавшее число очков.</li><li>Можно занимать свободные пункты; если на пункте стоит одна шашка соперника, её можно «съесть» (в коротких нардах).</li><li>С «головы» (начальной позиции) можно снимать только одну шашку за ход (кроме первого хода).</li><li>Когда все шашки в «доме», их начинают выносить за доску.</li></ul>" },
-
     { name: "Каркассон", meta: "2–5 игроков · 40 мин",
       body: "<p><b>Цель:</b> набрать больше всех победных очков к концу игры, выкладывая тайлы и занимая объекты.</p><ul><li>Игроки по очереди берут тайл с ландшафтом (дорога, город, поле, монастырь) и выкладывают его к уже выложенным по принципу домино: дорога к дороге, стена к стене и т.д.</li><li>На выложенный тайл можно поставить своего человечка (мипла), чтобы занять дорогу, город, поле или монастырь.</li><li>Завершённые объекты приносят очки: дорога — 1 очко за тайл, город — 2 очка за тайл, монастырь — 1 очко за сам монастырь и по 1 за каждый окружающий тайл.</li><li>В конце игры проводится финальный подсчёт, включая незавершённые объекты.</li></ul>" },
-
     { name: "Мафия", meta: "6–16 игроков · 30 мин",
       body: "<p><b>Цель:</b> мирные жители должны вычислить и казнить всю мафию; мафия должна уничтожить мирных жителей.</p><ul><li>Ведущий раздаёт роли: мафия, мирные жители, комиссар, доктор и др.</li><li>Ночью все закрывают глаза; мафия просыпается, запоминает своих и выбирает жертву; комиссар проверяет игрока; доктор лечит.</li><li>Днём все обсуждают убийство и голосуют, кого казнить.</li><li>Игра делится на два этапа: день и ночь, и продолжается до победы одной из сторон.</li></ul>" },
-
     { name: "Словодел", meta: "2–4 игрока · 30 мин",
       body: "<p><b>Цель:</b> набрать больше всех очков, составляя слова на поле из букв.</p><ul><li>Каждый игрок берёт 7 фишек с буквами; фишки перемешиваются буквами вниз.</li><li>Первое слово должно пересекать две коричневые клетки в центре поля.</li><li>Слова составляются горизонтально или вертикально и должны пересекаться с уже выложенными.</li><li>За использование всех 7 фишек за один ход начисляется премия в 25 очков.</li><li>Игра продолжается, пока не выложены все буквы или пока можно составлять слова.</li></ul>" },
-
     { name: "Дженга", meta: "2+ игроков · 15 мин",
       body: "<p><b>Цель:</b> не обрушить башню. Проигрывает тот, кто её разрушил.</p><ul><li>Башня строится из 54 блоков высотой в 18 этажей: каждый этаж — 3 блока, уложенных перпендикулярно предыдущему.</li><li>Игроки по очереди вытаскивают по одному блоку из любого уровня, кроме верхних трёх, и кладут его наверх.</li><li>Использовать можно только одну руку.</li><li>Ход заканчивается, когда следующий игрок дотронется до башни или пройдёт 10 секунд.</li><li>Побеждает последний игрок, который успешно переложил блок.</li></ul>" },
-
     { name: "Спящие королевы", meta: "2–5 игроков · 20 мин",
       body: "<p><b>Цель:</b> разбудить больше всех королев или первым набрать нужное количество очков.</p><ul><li>12 карт королев перемешиваются и кладутся в центре рубашкой вверх.</li><li>В свой ход можно сыграть одну карту: Короля (разбудить королеву), Рыцаря (украсть королеву у соперника), Дракона (защитить свою королеву от Рыцаря) и т.д.</li><li>Королевы приносят победные очки; у каждой королевы своя ценность.</li><li>Победа: для 2–3 игроков — 5 королев или 50 очков; для 4–5 игроков — 4 королевы или 40 очков.</li></ul>" },
-
     { name: "Иманджинариум", meta: "3–8 игроков · 30 мин",
       body: "<p><b>Цель:</b> набрать больше всех очков, угадывая ассоциации по картинкам.</p><ul><li>Каждый ход один игрок становится ведущим. Он выбирает свою карту, кладёт её рубашкой вверх и называет ассоциацию.</li><li>Остальные игроки выбирают из своих рук карту, которая лучше всего подходит под эту ассоциацию, и сдают её ведущему.</li><li>Ведущий перемешивает все сданные карты и выкладывает их в ряд.</li><li>Игроки голосуют за карту, которая, по их мнению, принадлежит ведущему.</li><li>Очки получают ведущий (если его карту угадали), игроки за верные угадывания и за то, что их карту выбрали.</li></ul>" },
-
     { name: "Подбери мем", meta: "3–8 игроков · 20 мин",
       body: "<p><b>Цель:</b> подобрать самый смешной мем под ситуацию.</p><ul><li>Каждый игрок получает карты с мемами (обычно по 3–6 штук).</li><li>Ведущий читает ситуацию с карточки.</li><li>Все игроки выбирают из своих рук мем, который лучше всего описывает эту ситуацию, и кладут его на стол.</li><li>Ведущий выбирает самый смешной мем; автор получает очко.</li><li>Побеждает тот, кто наберёт больше всех очков («Король мемов»).</li></ul>" },
-
     { name: "Свинтус", meta: "2–8 игроков · 15 мин",
       body: "<p><b>Цель:</b> первым избавиться от всех карт на руке.</p><ul><li>Каждый игрок получает 8 карт; верхняя карта колоды открывается и кладётся в игровую стопку.</li><li>В свой ход выкладывайте карту, совпадающую с верхней картой стопки по цвету или по достоинству.</li><li>Спецкарты («Хапёж», «Перевод» и др.) меняют ход игры; «Перевод» позволяет перевести вредную карту на другого игрока.</li><li>Когда игрок разыгрывает предпоследнюю карту, он должен крикнуть «Свинтус!».</li><li>Раунд выигрывает тот, кто первым сбросил все карты; партия идёт до определённого количества очков (например, 30).</li></ul>" },
-
     { name: "Крокодил", meta: "4–16 игроков · 20 мин",
       body: "<p><b>Цель:</b> объяснить слово команде без слов (жестами, мимикой) или рисунком, в зависимости от варианта.</p><ul><li>Игроки делятся на команды или играют друг против друга.</li><li>Ведущий берёт карту со словами, выбирает одно слово и показывает его своей команде.</li><li>Запрещено произносить звуки, писать или показывать буквы.</li><li>Команда угадывает слово за отведённое время; за каждое угаданное слово — очко.</li><li>Ход переходит к следующей команде; побеждает команда с большим количеством очков.</li></ul>" },
-
     { name: "Нечто", meta: "4–8 игроков · 30 мин",
       body: "<p><b>Цель:</b> люди должны сбежать со станции и не дать пришельцу заразить всех; пришелец должен заразить всех или сбежать вместе с людьми.</p><ul><li>В начале игры роли распределяются скрыто: один игрок — Нечто (пришелец), остальные — люди.</li><li>В свой ход игрок выполняет три действия: берёт карту из колоды, разыгрывает/сбрасывает карту события, меняется картой с игроком по направлению хода.</li><li>Пришелец передаёт карты заражения; люди пытаются вычислить его и сжечь огнемётом.</li><li>Побеждают люди, если им удаётся сбежать без заражения; пришелец побеждает, если заражает всех или спасается вместе с ними.</li></ul>" },
-
     { name: "Мемо", meta: "2–6 игроков · 15 мин",
       body: "<p><b>Цель:</b> собрать больше всех парных карточек.</p><ul><li>Карточки перемешиваются и раскладываются на столе картинками вниз.</li><li>Игроки по очереди переворачивают по две карточки так, чтобы все видели изображения.</li><li>Если картинки совпали, игрок забирает пару и делает ещё один ход.</li><li>Если разные — карточки переворачиваются обратно, ход переходит к следующему.</li><li>Побеждает тот, кто к концу игры соберёт больше всего карточек.</li></ul>" },
-
     { name: "Эрудит", meta: "2–4 игрока · 30–60 мин",
       body: "<p><b>Цель:</b> набрать больше всех очков, составляя слова на поле из букв.</p><ul><li>Каждый игрок получает 7 случайных букв (всего в колоде около 100+ фишек).</li><li>Первое слово должно проходить через центральную клетку.</li><li>Слова выкладываются горизонтально или вертикально, как в кроссворде; каждое новое слово должно использовать хотя бы одну букву, уже находящуюся на поле.</li><li>У букв разная ценность; клетки-бонусы умножают очки.</li><li>За использование всех 7 букв за один ход начисляется бонус.</li><li>Игра заканчивается, когда один из игроков набирает условный счёт или заканчиваются фишки.</li></ul>" },
-
     { name: "Ёрш", meta: "2–6 игроков · 15 мин",
       body: "<p><b>Цель:</b> набрать больше всех «очков трезвости», выполняя задания.</p><ul><li>Игроки по очереди берут карту задания и решают, выполнять его или нет.</li><li>Выполнив задание, игрок берёт карту бонуса и получает очки трезвости.</li><li>При отказе игрок получает штрафную (обычно — выпивка), а его сосед справа — то же задание.</li><li>В колоде есть карты с медведями; когда у игрока накапливается 3 карты медведя, игра приближается к концу.</li><li>Побеждает тот, кто наберёт наибольшее количество очков трезвости.</li></ul>" },
-
     { name: "Кто ты? Что ты?", meta: "4–12 игроков · 30 мин",
       body: "<p><b>Цель:</b> с помощью наводящих вопросов отгадать, какой вы персонаж или предмет.</p><ul><li>Каждый игрок надевает на голову обруч и, не глядя, вставляет в прорезь карточку с изображением.</li><li>Игроки по очереди задают вопросы другим игрокам, стараясь определить свою роль.</li><li>Отвечать можно только «Да» или «Нет».</li><li>Тот, кто первым правильно назовёт, кто он, побеждает.</li></ul>" }
   ];
 
-  /* ============ ОТРИСОВКА ИГР ============ */
   var chipsBox = document.getElementById('gameChips');
   games.forEach(function (g) {
     var el = document.createElement('span');
@@ -1220,7 +1193,6 @@ document.addEventListener('DOMContentLoaded', function () {
     chipsBox.appendChild(el);
   });
 
-  /* ============ МОДАЛКА ============ */
   var modal = document.getElementById('gameModal');
   var modalTitle = document.getElementById('modalTitle');
   var modalMeta = document.getElementById('modalMeta');
