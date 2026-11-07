@@ -361,17 +361,6 @@
     user-select: none;
     -webkit-user-drag: none;
   }
-  .carousel-slide .slide-caption {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 24px 14px 12px;
-    background: linear-gradient(transparent, rgba(47,42,34,0.72));
-    color: #FBEFE1;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: .02em;
-    pointer-events: none;
-  }
   .carousel-dots {
     position: absolute;
     bottom: 10px; left: 50%;
@@ -507,24 +496,19 @@
   <div class="photo-carousel" id="photoCarousel">
     <div class="carousel-track" id="carouselTrack">
       <div class="carousel-slide">
-        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&q=80" alt="Интерьер гастробара" loading="lazy">
-        <div class="slide-caption">Атмосфера гастробара</div>
+        <img src="atm.jpg" loading="lazy">
       </div>
       <div class="carousel-slide">
-        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&q=80" alt="Авторские коктейли" loading="lazy">
-        <div class="slide-caption">Авторские коктейли</div>
+        <img src="kokt.jpg" alt="Авторские коктейли" loading="lazy">
       </div>
       <div class="carousel-slide">
-        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80" alt="Блюда кухни" loading="lazy">
-        <div class="slide-caption">Кухня</div>
+        <img src="eat.jpg" alt="Блюда кухни" loading="lazy">
       </div>
       <div class="carousel-slide">
-        <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&q=80" alt="Барная стойка" loading="lazy">
-        <div class="slide-caption">Бар</div>
+        <img src="play.jpg" alt="Барная стойка" loading="lazy">
       </div>
       <div class="carousel-slide">
-        <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800&q=80" alt="Гости за столиком" loading="lazy">
-        <div class="slide-caption">Вечер с друзьями</div>
+        <img src="d.jpg" alt="Гости за столиком" loading="lazy">
       </div>
     </div>
     <button class="carousel-arrow prev" id="carouselPrev" aria-label="Предыдущее фото">‹</button>
@@ -534,18 +518,23 @@
 
   <div class="intro-card">
     <h2>История «60»</h2>
-    <p>«Гастробар 60» открылся в 2009 году на пешеходной Баумана — тогда это было небольшое кафе с кофе и десертами на несколько столиков. Со временем кухня выросла, появился полноценный бар, а в 2016-м заведение пережило первое большое обновление: именно тогда сложился формат гастробара с акцентом на локальные продукты и авторские коктейли.</p>
+    <p>Заведение на Баумана, 60, знакомо многим как «Интеллект-бар IQ» — оно открылось в 2009 году и позиционировалось как «пожалуй, самое интеллектуальное кафе в городе». Здесь была собственная библиотека, работающая по принципу буккроссинга, большая коллекция настольных игр и живая музыка. Гости могли взять книгу с полки, сыграть партию в «Каркассон» или «Манчкин» и обсудить прочитанное за чашкой кофе.</p>
 
-    <p>Сегодня «60» — это место, где соседствуют татарская классика и современная гастрономия: кыстыбый и бешбармак здесь подают по соседству с том-ямом и стейками, а бармены экспериментируют с настойками и сезонными коктейлями. На полках — десятки настольных игр, которые можно взять за столик.</p>
+    <p>В 2021 году IQ cafe&amp;bar обновил формат, а позже, в соответствии с требованиями к вывескам, заведение получило новое имя — «Гастробар 60», привязанное к адресу. При этом интеллектуальная составляющая никуда не ушла: полки с книгами и настольные игры остались частью атмосферы, а кухня выросла до полноценного гастробара с акцентом на локальные продукты и авторские коктейли.</p>
+
+    <div class="feature">
+      <div class="icon">📚</div>
+      <div class="txt"><strong>Библиотека и буккроссинг.</strong> Книги можно брать с полок, читать за столиком и приносить свои — фонд формируется самими гостями.</div>
+    </div>
 
     <div class="feature">
       <div class="icon">🎲</div>
-      <div class="txt"><strong>Настолки.</strong> Большая полка игр — от «Дженги» и «Элиаса» до «Каркассона». Берите любую, играйте за столиком, а мы подскажем правила и принесём ещё один раунд коктейлей.</div>
+      <div class="txt"><strong>Настолки.</strong> Большая полка игр — от «Дженги» и «Элиаса» до «Каркассона». Берите любую, играйте за столиком, а мы подскажем правила.</div>
     </div>
 
     <div class="feature">
       <div class="icon">📞</div>
-      <div class="txt"><strong>Бронь.</strong> Столик можно забронировать по телефону — для свидания, встречи с друзьями или дня рождения. Скажите, что нужна настолка, и мы всё подготовим заранее.</div>
+      <div class="txt"><strong>Бронь.</strong> Столик можно забронировать по телефону — для свидания, встречи с друзьями или дня рождения. Скажите, что нужна настолка или книга, и мы всё подготовим заранее.</div>
     </div>
 
     <p>Приходите за атмосферой — уходить не захочется.</p>
